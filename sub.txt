@@ -4,6 +4,8 @@
 #support-url: https://t.me/xover_naabuzil_help
 #profile-web-page-url: https://t.me/xex_vpn
 
+vless://758e5d79-df2b-4db6-aa2e-506bad730a1f@hu01.kubservice.icu:443?security=reality&encryption=none&pbk=z-TKWOWgZLfzQ-wNdwXQqVwaUgCmbchM2Xtrk1NGynU&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=hu01.kubservice.icu#🇭🇺 Венгрия #2 ⚡️
+
 vless://eeb2efff-5a63-49d4-a064-f9b81ee9286b@uk-1.legendary-vpn.com:443?security=reality&encryption=none&pbk=YlE0S-fAlbuOggWrpfzIfkiKZfNUF2HX75hGRR8NiG8&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=uk-1.legendary-vpn.com&sid=2e28862bdc5b9f03#🇬🇧 Великобритания [1] ⚡️
 
 hysteria2://hysteria2_fastlane_ov6xi6f0e:pZNMlRhaFgZFCcAsNjxbOtwCO5Z5Hrsk@91.132.160.243:1935?security=tls&allowinsecure=0&sni=de6.h.fastlanehosting.ru#🇬🇧 Великобритания [2] ⚡️
@@ -12,13 +14,11 @@ vless://eeb2efff-5a63-49d4-a064-f9b81ee9286b@nl-3.legendary-vpn.com:443?security
 
 vless://eeb2efff-5a63-49d4-a064-f9b81ee9286b@nl-3.legendary-vpn.com:443?security=reality&encryption=none&pbk=57wfdSxZrjZMVeohIwTpAU6spdT6oYrzzw_LRjSBfVI&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=nl-3.legendary-vpn.com&sid=7d897f0b4cf1b848#🇳🇱 Нидерланды [14] ⚡️
 
-vless://a3a90d47-df89-496b-a578-814d8c85d8fc@finland-1.mutabor-sec.ru:37623?security=reality&encryption=none&pbk=VSD97wC6JYviZSi66w6leWdOljj_dr4LaibgyoGDLnw&headerType=none&fp=random&spx=%2FVGg5te9EB8nbn8a&allowinsecure=0&type=tcp&sni=www.mutabor-sec.ru&sid=458dfb15fb#🇫🇮 Финляндия [2] ⚡️
+vless://cb8ef789-2eb0-455a-909d-879fe09cf9d4@fr.nodes.rocketnetwork.ru:443?security=reality&encryption=none&pbk=Mn0DIMKW6zu0_D3E1qKO7xMlIVZvB-rqO_-f7Le2vAs&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=fr.nodes.rocketnetwork.ru&sid=428ef87fd47a3a32#🇫🇷 Франция #2 ⚡️
+
+vless://0eca1f22-e5a1-4888-a0fa-c2345e87cf2f@in-fi-he.ray-balance.space:443?security=reality&encryption=none&pbk=Q2tOlk0AlcufziQD1uUzBzb8Y2a_0Jp1Dq2KCnC1Z08&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=eh.vk.com#🇫🇮 Финляндия #3 ⚡️
 
 vless://3fa43a99-b7c8-4d73-889e-63d186f41d5b@91.197.1.218:15655?security=reality&encryption=none&pbk=bSpAbv0pfxf2D8OySqg2HiPTQN90wPv7hKD2e47ZtB4&headerType=none&fp=chrome&allowinsecure=0&type=tcp&sni=google.com&sid=3879#🇱🇻 Латвия ⚡️
-
-vless://698bc4fc-2966-4dbf-bc4f-a0f1df66eab5@cdn20.api-rutube.ru:443?security=reality&encryption=none&pbk=_4cv7OXJFuVt8PGPNwk8isFFgrRR5tKojjpLWGTN8RI&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=cdn.trahodrom.fun#🇵🇱 Польша [4] ⚡️
-
-vless://698bc4fc-2966-4dbf-bc4f-a0f1df66eab5@cdn20.api-rutube.ru:443?security=reality&encryption=none&pbk=_4cv7OXJFuVt8PGPNwk8isFFgrRR5tKojjpLWGTN8RI&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=cdn.trahodrom.fun#🇵🇱 Польша [1] ⚡️
 
 vless://ea7a732a-9433-45ad-be12-f8e505e623ee@super.vpn125.top:46806?security=reality&encryption=none&pbk=PFSaepznxbwfydXS_K5B1R8KJn-t0hjaExuL4P555zw&headerType=none&fp=chrome&spx=%2F&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=www.microsoft.com&sid=d8bc63e1#🇺🇸 США ⚡️
 
