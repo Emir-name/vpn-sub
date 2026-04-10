@@ -14,9 +14,9 @@ vless://c7e4d5f2-9472-471b-ba5e-8ac731cc2b85@ge1.pineappled.org:443?security=rea
 
 vless://3fa43a99-b7c8-4d73-889e-63d186f41d5b@91.197.1.218:15655?security=reality&encryption=none&pbk=bSpAbv0pfxf2D8OySqg2HiPTQN90wPv7hKD2e47ZtB4&headerType=none&fp=chrome&allowinsecure=0&type=tcp&sni=google.com&sid=3879#🇱🇻 Латвия ⚡️
 
-vless://322ffd77-9adc-4e10-8302-a8bcc14555a0@144.31.243.160:443?security=reality&encryption=none&pbk=_e21PkbpGda7PXEBs8y8iJiKVkEYkZGR_Sfs5rCO_HM&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=google.com&sid=a1b2c3d4#🇱🇹 Литва ⚡️
+vless://322ffd77-9adc-4e10-8302-a8bcc14555a0@144.31.243.160:443?security=reality&encryption=none&pbk=_e21PkbpGda7PXEBs8y8iJiKVkEYkZGR_Sfs5rCO_HM&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=google.com&sid=a1b2c3d4#🇱🇹 Литва [1] ⚡️
 
-hysteria2://hysteria2_fastlane_jwiedq1o6:gJ4QaCJfdNQffhf2p4YkDqwSwj588q7D@5.181.21.132:1935?security=tls&allowinsecure=0&sni=at1.h.smartaisupport.ru#🇦🇹 Австрия ⚡️
+vless://322ffd77-9adc-4e10-8302-a8bcc14555a0@144.31.243.160:443?security=reality&encryption=none&pbk=_e21PkbpGda7PXEBs8y8iJiKVkEYkZGR_Sfs5rCO_HM&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=google.com&sid=a1b2c3d4#🇱🇹 Литва [2] ⚡️
 
 vless://ea7a732a-9433-45ad-be12-f8e505e623ee@super.vpn125.top:46806?security=reality&encryption=none&pbk=PFSaepznxbwfydXS_K5B1R8KJn-t0hjaExuL4P555zw&headerType=none&fp=chrome&spx=%2F&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=www.microsoft.com&sid=d8bc63e1#🇺🇸 США ⚡️
 
