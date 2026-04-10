@@ -10,7 +10,9 @@ hysteria2://hysteria2_fastlane_ov6xi6f0e:pZNMlRhaFgZFCcAsNjxbOtwCO5Z5Hrsk@91.132
 
 vless://eeb2efff-5a63-49d4-a064-f9b81ee9286b@nl-3.legendary-vpn.com:443?security=reality&encryption=none&pbk=57wfdSxZrjZMVeohIwTpAU6spdT6oYrzzw_LRjSBfVI&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=nl-3.legendary-vpn.com&sid=7d897f0b4cf1b848#🇳🇱 Нидерланды ⚡️
 
-vless://c7e4d5f2-9472-471b-ba5e-8ac731cc2b85@ge1.pineappled.org:443?security=reality&encryption=none&pbk=V6FabatADtcX7aO9KMjGCadJC4LuQ_5nRViab-z-nFQ&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=www.apple.com&sid=23#🇳🇱 Нидерланды [alt] ⚡️
+vless://eeb2efff-5a63-49d4-a064-f9b81ee9286b@nl-3.legendary-vpn.com:443?security=reality&encryption=none&pbk=57wfdSxZrjZMVeohIwTpAU6spdT6oYrzzw_LRjSBfVI&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=nl-3.legendary-vpn.com&sid=7d897f0b4cf1b848#🇳🇱 Нидерланды [14] ⚡️
+
+vless://a3a90d47-df89-496b-a578-814d8c85d8fc@finland-1.mutabor-sec.ru:37623?security=reality&encryption=none&pbk=VSD97wC6JYviZSi66w6leWdOljj_dr4LaibgyoGDLnw&headerType=none&fp=random&spx=%2FVGg5te9EB8nbn8a&allowinsecure=0&type=tcp&sni=www.mutabor-sec.ru&sid=458dfb15fb#🇫🇮 Финляндия [2] ⚡️
 
 vless://3fa43a99-b7c8-4d73-889e-63d186f41d5b@91.197.1.218:15655?security=reality&encryption=none&pbk=bSpAbv0pfxf2D8OySqg2HiPTQN90wPv7hKD2e47ZtB4&headerType=none&fp=chrome&allowinsecure=0&type=tcp&sni=google.com&sid=3879#🇱🇻 Латвия ⚡️
 
