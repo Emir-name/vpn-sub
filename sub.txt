@@ -2,11 +2,9 @@
 #announce: 🔰 Первые 3 — самые быстрые. Остальное резерв.
 #profile-update-interval: 6
 
-vless://758e5d79-df2b-4db6-aa2e-506bad730a1f@de11.kubservice.icu:443?security=reality&encryption=none&pbk=z-TKWOWgZLfzQ-wNdwXQqVwaUgCmbchM2Xtrk1NGynU&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=de11.kubservice.icu#🇩🇪 Германия |@xex_vpn #3 ⚡️
+hysteria2://strong-secret-pass-777@94.131.105.125:444?security=tls&fm=%7B%22udp%22%3A%5B%7B%22settings%22%3A%7B%22password%22%3A%22cry_me_a_r1ver_2026%22%7D%2C%22type%22%3A%22salamander%22%7D%5D%7D&allowinsecure=1&sni=www.microsoft.com#🇺🇸 Соединённые Штаты Америки ⚡️
 
-vless://411cfe73-8425-4504-a1bf-a7c04fb09245@46.166.162.105:8443?mode=auto&path=%2FxTe8kLm3qW&security=reality&encryption=none&extra=%7B%22xmux%22%3A%7B%22cMaxReuseTimes%22%3A0.0%2C%22maxConcurrency%22%3A%2216-32%22%2C%22maxConnections%22%3A0.0%2C%22hKeepAlivePeriod%22%3A0.0%2C%22hMaxRequestTimes%22%3A%22600-900%22%2C%22hMaxReusableSecs%22%3A%221800-3000%22%7D%2C%22headers%22%3A%7B%7D%2C%22noGRPCHeader%22%3Afalse%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22scMaxEachPostBytes%22%3A1000000.0%2C%22scMinPostsIntervalMs%22%3A30.0%2C%22scStreamUpServerSecs%22%3A%2220-80%22%7D&pbk=jDbl0R0fFO6Voe98gfO12dEkl-NC6H7pEv8vSrJr9Gc&fp=qq&allowinsecure=0&type=xhttp&sni=deepl.com&sid=557d44fcf3a05806#🇱🇹 Литва |@xex_vpn #2 ⚡️
-
-vless://a3a33b94-931e-40de-918f-409d2bae6be9@nodevipvpn123123124.soon.it:443?security=reality&encryption=none&pbk=OUrZj2k14vPxLkMQ8GkUYyCrQytvky3xqvg4ElYoZzo&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=nodevipvpn123123124.soon.it&sid=1ccb9eab1827786e#🇳🇱 Нидерланды [2] ⚡️
+vless://cb8ef789-2eb0-455a-909d-879fe09cf9d4@am.nodes.rocketnetwork.ru:443?security=reality&encryption=none&echfq=none&pbk=Mn0DIMKW6zu0_D3E1qKO7xMlIVZvB-rqO_-f7Le2vAs&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=am.nodes.rocketnetwork.ru&sid=428ef87fd47a3a32#🇦🇲 Армения ⚡️
 
 vless://411cfe73-8425-4504-a1bf-a7c04fb09245@46.166.162.105:8443?mode=auto&path=%2FxTe8kLm3qW&security=reality&encryption=none&extra=%7B%22xmux%22%3A%7B%22cMaxReuseTimes%22%3A0.0%2C%22maxConcurrency%22%3A%2216-32%22%2C%22maxConnections%22%3A0.0%2C%22hKeepAlivePeriod%22%3A0.0%2C%22hMaxRequestTimes%22%3A%22600-900%22%2C%22hMaxReusableSecs%22%3A%221800-3000%22%7D%2C%22headers%22%3A%7B%7D%2C%22noGRPCHeader%22%3Afalse%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22scMaxEachPostBytes%22%3A1000000.0%2C%22scMinPostsIntervalMs%22%3A30.0%2C%22scStreamUpServerSecs%22%3A%2220-80%22%7D&pbk=jDbl0R0fFO6Voe98gfO12dEkl-NC6H7pEv8vSrJr9Gc&fp=qq&allowinsecure=0&type=xhttp&sni=deepl.com&sid=557d44fcf3a05806#🇱🇹 Литва [6] ⚡️
 
