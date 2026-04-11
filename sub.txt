@@ -2,18 +2,16 @@
 #announce: 🔰 Первые 3 — самые быстрые. Остальное резерв.
 #profile-update-interval: 6
 
-hysteria2://hysteria2_fastlane_ov6xi6f0e:pZNMlRhaFgZFCcAsNjxbOtwCO5Z5Hrsk@91.132.160.243:1935?security=tls&allowinsecure=0&sni=de6.h.fastlanehosting.ru#🇬🇧 Великобритания [5] ⚡️
+vless://411cfe73-8425-4504-a1bf-a7c04fb09245@46.166.162.105:8443?mode=auto&path=%2FxTe8kLm3qW&security=reality&encryption=none&extra=%7B%22xmux%22%3A%7B%22cMaxReuseTimes%22%3A0.0%2C%22maxConcurrency%22%3A%2216-32%22%2C%22maxConnections%22%3A0.0%2C%22hKeepAlivePeriod%22%3A0.0%2C%22hMaxRequestTimes%22%3A%22600-900%22%2C%22hMaxReusableSecs%22%3A%221800-3000%22%7D%2C%22headers%22%3A%7B%7D%2C%22noGRPCHeader%22%3Afalse%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22scMaxEachPostBytes%22%3A1000000.0%2C%22scMinPostsIntervalMs%22%3A30.0%2C%22scStreamUpServerSecs%22%3A%2220-80%22%7D&pbk=jDbl0R0fFO6Voe98gfO12dEkl-NC6H7pEv8vSrJr9Gc&fp=qq&allowinsecure=0&type=xhttp&sni=deepl.com&sid=557d44fcf3a05806#🇱🇹 Литва [19] ⚡️
 
-vless://c5ab5239-442d-4a25-9d74-e28e09a86e6a@white2meow.nethcloud.top:443?security=reality&encryption=none&pbk=1HeKf_8KDjfzXfUi9P7WBaGStMvr96TKdUbofpkwBzQ&headerType=none&fp=qq&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=wikihow.com&sid=8bd29483ded126b4#🇧🇬 Болгария [2] ⚡️
+vless://00c5261b-1ec2-4cac-b795-7324facd4dd2@ru5.whoshere.site:8443?security=tls&encryption=none&alpn=http/1.1&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=ru5.whoshere.site#🇩🇪 Германия [8] ⚡️
+
+vless://00c5261b-1ec2-4cac-b795-7324facd4dd2@ru5.whoshere.site:8443?security=tls&encryption=none&alpn=http/1.1&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=ru5.whoshere.site#🇩🇪 Германия [20] ⚡️
+
+vless://00c5261b-1ec2-4cac-b795-7324facd4dd2@ru5.whoshere.site:443?security=tls&encryption=none&alpn=http/1.1&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=ru5.whoshere.site#🇩🇪 Германия [19] ⚡️
 
 vless://c5ab5239-442d-4a25-9d74-e28e09a86e6a@white2meow.nethcloud.top:443?security=reality&encryption=none&pbk=1HeKf_8KDjfzXfUi9P7WBaGStMvr96TKdUbofpkwBzQ&headerType=none&fp=qq&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=wikihow.com&sid=8bd29483ded126b4#🇧🇬 Болгария [1] ⚡️
-
-vless://9c31cf36-7616-437e-9917-fd029ed9ab5f@162.217.249.124:7443?security=reality&encryption=none&pbk=5QAO98ot2U7TcGs_f6EEaQjCzNOJLNHqPf6smYsdFVI&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=chat.deepseek.com&sid=be0ce047#🇳🇱 Нидерланды [14] ⚡️
 
 vless://cb8ef789-2eb0-455a-909d-879fe09cf9d4@fr.nodes.rocketnetwork.ru:443?security=reality&encryption=none&pbk=Mn0DIMKW6zu0_D3E1qKO7xMlIVZvB-rqO_-f7Le2vAs&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=fr.nodes.rocketnetwork.ru&sid=428ef87fd47a3a32#🇫🇷 Франция ⚡️
 
 vless://758e5d79-df2b-4db6-aa2e-506bad730a1f@de11.kubservice.icu:443?security=reality&encryption=none&pbk=z-TKWOWgZLfzQ-wNdwXQqVwaUgCmbchM2Xtrk1NGynU&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=de11.kubservice.icu#🇩🇪 Германия #3 ⚡️
-
-vless://3d243df5-9cda-4aac-89d5-354de77d79e2@reserve.pilates.rodeo:2053?mode=gun&security=tls&encryption=none&alpn=http/1.1,h2&authority=&allowinsecure=1&type=grpc&serviceName=grpc&sni=nice.ducks.tel#🇩🇪 Германия [4] ⚡️
-
-vless://9c31cf36-7616-437e-9917-fd029ed9ab5f@77.239.126.121:7443?security=reality&encryption=none&pbk=5QAO98ot2U7TcGs_f6EEaQjCzNOJLNHqPf6smYsdFVI&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=chat.deepseek.com&sid=d82fb387#🇪🇪 Эстония [1] ⚡️
