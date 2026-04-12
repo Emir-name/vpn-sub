@@ -4,9 +4,9 @@
 
 hysteria2://strong-secret-pass-777@94.131.105.125:444?security=tls&fm=%7B%22udp%22%3A%5B%7B%22settings%22%3A%7B%22password%22%3A%22cry_me_a_r1ver_2026%22%7D%2C%22type%22%3A%22salamander%22%7D%5D%7D&allowinsecure=1&sni=www.microsoft.com#🇺🇸 Соединённые Штаты Америки ⚡️
 
-vless://7e7452f2-1004-45ed-a55a-f9d474e152c7@swe-bridge.sbrf-cdn342.ru:443?security=tls&encryption=none&alpn=http/1.1&headerType=none&fp=qq&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=sub.sbrf-cdn342.ru#6. 🇸🇪 Sweden ⚡️
+vless://7e7452f2-1004-45ed-a55a-f9d474e152c7@uae.sbrf-cdn342.ru:443?security=tls&encryption=none&alpn=http/1.1&headerType=none&fp=random&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=sub.sbrf-cdn342.ru#78. 🇦🇪 United Arab Emirates ⚡️
 
-vless://11e859d6-0356-4567-a18c-42e616d614a1@max5r.skystreamgame.com:8443?security=reality&encryption=none&pbk=XBePIY00JetBf0pbmcx-Dvu8XsZ-l079GiHf93HhS0Y&headerType=none&fp=randomized&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=max5r.skystreamgame.com&sid=6d6f13013d3e1d0c#12. 🇸🇪 Sweden ⚡️
+vless://c3f75f0e-3fe6-4037-95be-ec869c453dfc@188.114.97.3:80?path=%2FeyJqdW5rIjoiZUtoUTZYaXU3TmIiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119%3Fed%3D2560&security=none&encryption=none&host=024.electrocellco-cf-024.workers.dev&type=ws#3. 🇸🇪 Sweden ⚡️
 
 vless://0a5ab719-2407-4398-b507-8437ef365023@104.21.31.4:8880?path=%2FFCHANNEL---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY&security=none&encryption=none&host=underthegun.cfd.&type=ws#28. 🇸🇪 Sweden ⚡️
 
