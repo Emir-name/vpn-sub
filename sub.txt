@@ -4,9 +4,9 @@
 
 hysteria2://strong-secret-pass-777@94.131.105.125:444?security=tls&fm=%7B%22udp%22%3A%5B%7B%22settings%22%3A%7B%22password%22%3A%22cry_me_a_r1ver_2026%22%7D%2C%22type%22%3A%22salamander%22%7D%5D%7D&allowinsecure=1&sni=www.microsoft.com#🇺🇸 Соединённые Штаты Америки ⚡️
 
-vless://7e7452f2-1004-45ed-a55a-f9d474e152c7@uae.sbrf-cdn342.ru:443?security=tls&encryption=none&alpn=http/1.1&headerType=none&fp=random&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=sub.sbrf-cdn342.ru#78. 🇦🇪 United Arab Emirates ⚡️
+vless://7e7452f2-1004-45ed-a55a-f9d474e152c7@swe-bridge.sbrf-cdn342.ru:443?security=tls&encryption=none&alpn=http/1.1&headerType=none&fp=qq&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=sub.sbrf-cdn342.ru#1. 🇸🇪 Sweden ⚡️
 
-vless://d342d11e-d424-4583-b36e-524ab1f0afa4@104.20.6.134:2052?path=%2Fassets&security=none&encryption=none&host=index.0x14.workers.dev&type=ws#4. 🇫🇮 Finland ⚡️
+vless://9be040fc-6eb6-4bee-80e2-3b615c7c9829@85.193.88.82:443?security=reality&encryption=none&pbk=rDPZZOBMmBb_mNKPEewzp9Uu6zkGrP7XOVpnRzetXDc&headerType=none&fp=randomized&spx=%2F&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=goodcardboard.shop#29. 🇷🇺 Russia ⚡️
 
 vless://0a5ab719-2407-4398-b507-8437ef365023@104.21.31.4:8880?path=%2FFCHANNEL---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY&security=none&encryption=none&host=underthegun.cfd.&type=ws#28. 🇸🇪 Sweden ⚡️
 
