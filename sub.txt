@@ -22,4 +22,4 @@ vless://b738db04-c73c-4551-b6f2-9041e93914d4@3.125.212.24:4040?security=none&enc
 
 vless://cc49ff13-bb0d-476e-ae08-41dfd79a9d37@188.114.98.0:80?path=%2F&security=none&encryption=none&host=cdn2095.dgclix.ir&type=ws#🇨🇦 Канада #2 ⚡️
 
-vless://304098c0-8e7f-41fd-8df8-487504e9e55c@germany.coverprotect.info:443?security=reality&encryption=none&pbk=niiQUWkfq_H7K9kDI7rZVMId2WvlmafWLWknL1Cu2QA&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=germany.coverprotect.info&sid=e3ec60fe5f53a97c#12. 🇩🇪 Германия ⚡️
+vless://a2299480-c2b4-40e4-836a-3693c2ced4c4@pl01.kubservice.icu:443?security=reality&encryption=none&pbk=z-TKWOWgZLfzQ-wNdwXQqVwaUgCmbchM2Xtrk1NGynU&headerType=none&fp=qq&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=pl01.kubservice.icu#7. 🇵🇱 Польша ⚡️
