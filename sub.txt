@@ -10,7 +10,7 @@ vless://c3f75f0e-3fe6-4037-95be-ec869c453dfc@188.114.97.3:80?path=%2FeyJqdW5rIjo
 
 vless://0a5ab719-2407-4398-b507-8437ef365023@104.21.31.4:8880?path=%2FFCHANNEL---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY&security=none&encryption=none&host=underthegun.cfd.&type=ws#28. 🇸🇪 Sweden ⚡️
 
-vless://7e7452f2-1004-45ed-a55a-f9d474e152c7@nl-tx.sbrf-cdn342.ru:443?security=tls&encryption=none&alpn=http/1.1&headerType=none&fp=qq&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=sub.sbrf-cdn342.ru#31. 🇳🇱 Нидерланды [1] ⚡️
+vless://7e7452f2-1004-45ed-a55a-f9d474e152c7@georg.sbrf-cdn342.ru:443?security=tls&encryption=none&headerType=none&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=sub.sbrf-cdn342.ru#31. 🇬🇪 Грузия [1] ⚡️
 
 vless://40afa553-1745-4f62-a380-4163c7bb4870@188.114.96.3:443?path=%2F&security=tls&encryption=none&host=restless-dew-894b.amirhost4.workers.dev&fp=chrome&allowinsecure=0&type=ws&sni=restless-dew-894b.amirhost4.workers.dev#30. 🇸🇪 Sweden ⚡️
 
