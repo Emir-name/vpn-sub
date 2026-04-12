@@ -1,6 +1,6 @@
 #profile-title: 🛜 Emir VPN (MAX SPEED)
 #announce: 🔰 Первые 3 — самые быстрые. Остальное резерв.
-#profile-update-interval: 6
+#profile-update-interval: 3
 
 hysteria2://strong-secret-pass-777@94.131.105.125:444?security=tls&fm=%7B%22udp%22%3A%5B%7B%22settings%22%3A%7B%22password%22%3A%22cry_me_a_r1ver_2026%22%7D%2C%22type%22%3A%22salamander%22%7D%5D%7D&allowinsecure=1&sni=www.microsoft.com#🇺🇸 Соединённые Штаты Америки ⚡️
 
@@ -8,19 +8,19 @@ hysteria2://hysteria2_fastlane_2x2a7v5u0:GGvdrUHVRqbNxsNwCxZ9lJZItCTHEhKF@5.181.
 
 hysteria2://hysteria2_fastlane_2x2a7v5u0:GGvdrUHVRqbNxsNwCxZ9lJZItCTHEhKF@5.181.21.132:1935?security=tls&allowinsecure=0&sni=at1.h.smartaisupport.ru#🇦🇹 Австрия [2] ⚡️
 
-vless://3b7e7ab6-feb0-4c12-b575-b5b2b8e7b8e5@de5.lazeroe.com:443?mode=auto&path=%2Fws&security=reality&encryption=none&pbk=i1kgdvvNoTAdTsmFcdFBItn1wakoTNZHC1F7nTCpLlo&fp=chrome&allowinsecure=0&type=xhttp&sni=de5.lazeroe.com&sid=6f9ae5be33ead6f9#🇩🇪 Германия [10] ⚡️
+vless://3b7e7ab6-feb0-4c12-b575-b5b2b8e7b8e5@de5.lazeroe.com:443?mode=auto&path=%2Fws&security=reality&encryption=none&pbk=i1kgdvvNoTAdTsmFcdFBItn1wakoTNZHC1F7nTCpLlo&fp=chrome&allowinsecure=0&type=xhttp&sni=de5.lazeroe.com&sid=6f9ae5be33ead6f9#🇩🇪 Германия [3] ⚡️
 
 vless://0eca1f22-e5a1-4888-a0fa-c2345e87cf2f@204.168.187.111:443?security=reality&encryption=none&pbk=Q2tOlk0AlcufziQD1uUzBzb8Y2a_0Jp1Dq2KCnC1Z08&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=eh.vk.com#2. 🇫🇮 Finland ⚡️
 
 vless://0eca1f22-e5a1-4888-a0fa-c2345e87cf2f@204.168.163.95:443?security=reality&encryption=none&pbk=Q2tOlk0AlcufziQD1uUzBzb8Y2a_0Jp1Dq2KCnC1Z08&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=eh.vk.com#5. 🇫🇮 Finland ⚡️
 
-vless://6d916d55-fead-4ff3-a3a9-83e175ea8ad7@node215.mechvpn.online:443?security=tls&encryption=none&alpn=h3,h2,http/1.1&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision#15. 🇷🇺 Russia ⚡️
+vless://6d916d55-fead-4ff3-a3a9-83e175ea8ad7@node215.mechvpn.online:443?security=tls&encryption=none&alpn=h3,h2,http/1.1&headerType=none&allowinsecure=0&type=tcp&flow=xtls-rprx-vision#27. 🇷🇺 Russia ⚡️
 
 vless://054b9fdb-4ca8-4b2e-9855-c1515c4937c5@188.114.98.0:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=ekhtelal120.mobailfarid4.ir&fp=chrome&allowinsecure=0&type=ws&sni=ekhtelal120.mobailfarid4.ir#18. 🇸🇪 Sweden ⚡️
 
 vmess://eyJhZGQiOiJ3d3cuY2xvdWRmbGFyZWluc2lnaHRzLmNvbSIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoicS5pa2V6LmRwZG5zLm9yZyIsImlkIjoiOGUzNGUxNzAtMTNhZS00ODkyLTlkMjAtMDU5NjJhY2M5Zjg0IiwibmV0Ijoid3MiLCJwYXRoIjoiLyIsInBvcnQiOiI4MCIsInBzIjoiMzAuIPCfh6vwn4e3IEZyYW5jZSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoiIiwidiI6IjIifQ==#30. 🇫🇷 France ⚡️
 
-vless://5124979b-84de-414f-880a-7b8bb8124b7e@latvia-picky-reality.moocluck.link:443?security=reality&encryption=none&pbk=JpQRITW3CcNC9_TzEunshmxBkcbbvNMPFlxOoMJeTng&headerType=none&fp=chrome&allowinsecure=0&type=tcp&flow=xtls-rprx-vision&sni=latvia-picky-reality.moocluck.link#156. 🇱🇻 Latvia ⚡️
+vless://ce069292-c8bf-40dd-a6b1-87818a1e64e9@193.233.231.232:8443?path=%2F&security=tls&encryption=none&host=3-8gy.pages.dev&fp=chrome&allowinsecure=0&type=ws&sni=3-8gy.pages.dev#51. 🇸🇪 Sweden ⚡️
 
 vless://b738db04-c73c-4551-b6f2-9041e93914d4@3.125.212.24:4040?security=none&encryption=none&host=soft98.ir&headerType=http&type=tcp#1. 🇩🇪 Germany ⚡️
 
