@@ -342,5 +342,87 @@
       {"tag": "block", "protocol": "blackhole"}
     ],
     "remarks": "🇨🇭Швейцария"
+  },
+  {
+    "dns": {
+      "servers": [
+        {
+          "address": "https://cloudflare-dns.com/dns-query",
+          "domains": ["geosite:geolocation-!cn"],
+          "skipFallback": true
+        },
+        {
+          "address": "77.88.8.8",
+          "domains": ["domain:ru", "domain:xn--p1ai"],
+          "skipFallback": true
+        }
+      ],
+      "queryStrategy": "UseIPv4"
+    },
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "domain": ["domain:ru", "domain:xn--p1ai"],
+          "outboundTag": "direct"
+        }
+      ],
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch"
+    },
+    "inbounds": [
+      {
+        "tag": "socks",
+        "port": 10808,
+        "listen": "127.0.0.1",
+        "protocol": "socks",
+        "settings": {"udp": true, "auth": "noauth"},
+        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
+      },
+      {
+        "tag": "http",
+        "port": 10809,
+        "listen": "127.0.0.1",
+        "protocol": "http",
+        "settings": {"allowTransparent": false},
+        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "178.154.219.149",
+              "port": 443,
+              "users": [
+                {
+                  "id": "a665822a-2171-41dc-a239-ba49bce6bd13",
+                  "encryption": "none",
+                  "flow": ""
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "grpc",
+          "grpcSettings": {"serviceName": "grpc", "authority": "", "mode": true},
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "ads.x5.ru",
+            "publicKey": "_fDCEIXPBl2p5KzcNXkan3RHM1YcZ-gEIlyAyVIMsHw",
+            "shortId": "84de68ab9373d412",
+            "spiderX": "/",
+            "fingerprint": "chrome"
+          }
+        }
+      },
+      {"tag": "direct", "protocol": "freedom"},
+      {"tag": "block", "protocol": "blackhole"}
+    ],
+    "remarks": "🇸🇦Саудовская Аравия"
   }
 ]
