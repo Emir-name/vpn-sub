@@ -6,7 +6,7 @@
       "rules": [
         {"type": "field", "protocol": ["bittorrent"], "outboundTag": "block"},
         {"type": "field", "domain": ["geosite:private"], "outboundTag": "direct"},
-        {"type": "field", "domain": ["geosite:yandex", "geosite:vk", "geosite:mailru", "domain:sberbank.ru", "domain:online.sberbank.ru", "domain:tinkoff.ru", "domain:tbank.ru", "domain:vtb.ru", "domain:online.vtb.ru", "domain:alfabank.ru", "domain:gosuslugi.ru", "domain:esia.gosuslugi.ru", "domain:nalog.gov.ru", "domain:mos.ru", "domain:cbr.ru", "domain:apple.com", "domain:icloud.com", "domain:push.apple.com", "domain:mtalk.google.com", "domain:gazprombank.ru", "domain:raiffeisen.ru", "domain:rosbank.ru", "domain:open.ru", "domain:sovcombank.ru", "domain:psbank.ru", "domain:ozon.ru", "domain:wildberries.ru", "domain:avito.ru", "domain:nspk.ru", "domain:sbp.nspk.ru", "domain:freekassa.com", "domain:freekassa.ru"], "outboundTag": "direct"},
+        {"type": "field", "domain": ["geosite:yandex","geosite:vk","geosite:mailru","domain:sberbank.ru","domain:online.sberbank.ru","domain:tinkoff.ru","domain:tbank.ru","domain:vtb.ru","domain:online.vtb.ru","domain:alfabank.ru","domain:gosuslugi.ru","domain:esia.gosuslugi.ru","domain:nalog.gov.ru","domain:mos.ru","domain:cbr.ru","domain:apple.com","domain:icloud.com","domain:push.apple.com","domain:mtalk.google.com","domain:gazprombank.ru","domain:raiffeisen.ru","domain:rosbank.ru","domain:open.ru","domain:sovcombank.ru","domain:psbank.ru","domain:ozon.ru","domain:wildberries.ru","domain:avito.ru","domain:nspk.ru","domain:sbp.nspk.ru","domain:freekassa.com","domain:freekassa.ru"], "outboundTag": "direct"},
         {"type": "field", "ip": ["geoip:ru"], "outboundTag": "direct"},
         {"type": "field", "network": "tcp,udp", "balancerTag": "lb_auto"}
       ],
@@ -70,7 +70,7 @@
       "rules": [
         {"type": "field", "protocol": ["bittorrent"], "outboundTag": "block"},
         {"type": "field", "domain": ["geosite:private"], "outboundTag": "direct"},
-        {"type": "field", "domain": ["geosite:yandex", "geosite:vk", "geosite:mailru", "domain:sberbank.ru", "domain:online.sberbank.ru", "domain:tinkoff.ru", "domain:tbank.ru", "domain:vtb.ru", "domain:online.vtb.ru", "domain:alfabank.ru", "domain:gosuslugi.ru", "domain:esia.gosuslugi.ru", "domain:nalog.gov.ru", "domain:mos.ru", "domain:cbr.ru", "domain:apple.com", "domain:icloud.com", "domain:push.apple.com", "domain:mtalk.google.com", "domain:gazprombank.ru", "domain:raiffeisen.ru", "domain:rosbank.ru", "domain:open.ru", "domain:sovcombank.ru", "domain:psbank.ru", "domain:ozon.ru", "domain:wildberries.ru", "domain:avito.ru", "domain:nspk.ru", "domain:sbp.nspk.ru", "domain:freekassa.com", "domain:freekassa.ru"], "outboundTag": "direct"},
+        {"type": "field", "domain": ["geosite:yandex","geosite:vk","geosite:mailru","domain:sberbank.ru","domain:online.sberbank.ru","domain:tinkoff.ru","domain:tbank.ru","domain:vtb.ru","domain:online.vtb.ru","domain:alfabank.ru","domain:gosuslugi.ru","domain:esia.gosuslugi.ru","domain:nalog.gov.ru","domain:mos.ru","domain:cbr.ru","domain:apple.com","domain:icloud.com","domain:push.apple.com","domain:mtalk.google.com","domain:gazprombank.ru","domain:raiffeisen.ru","domain:rosbank.ru","domain:open.ru","domain:sovcombank.ru","domain:psbank.ru","domain:ozon.ru","domain:wildberries.ru","domain:avito.ru","domain:nspk.ru","domain:sbp.nspk.ru","domain:freekassa.com","domain:freekassa.ru"], "outboundTag": "direct"},
         {"type": "field", "ip": ["geoip:ru"], "outboundTag": "direct"},
         {"type": "field", "network": "tcp,udp", "balancerTag": "lb_de"}
       ],
@@ -110,7 +110,7 @@
       "rules": [
         {"type": "field", "protocol": ["bittorrent"], "outboundTag": "block"},
         {"type": "field", "domain": ["geosite:private"], "outboundTag": "direct"},
-        {"type": "field", "domain": ["geosite:yandex", "geosite:vk", "geosite:mailru", "domain:sberbank.ru", "domain:online.sberbank.ru", "domain:tinkoff.ru", "domain:tbank.ru", "domain:vtb.ru", "domain:online.vtb.ru", "domain:alfabank.ru", "domain:gosuslugi.ru", "domain:esia.gosuslugi.ru", "domain:nalog.gov.ru", "domain:mos.ru", "domain:cbr.ru", "domain:apple.com", "domain:icloud.com", "domain:push.apple.com", "domain:mtalk.google.com", "domain:gazprombank.ru", "domain:raiffeisen.ru", "domain:rosbank.ru", "domain:open.ru", "domain:sovcombank.ru", "domain:psbank.ru", "domain:ozon.ru", "domain:wildberries.ru", "domain:avito.ru", "domain:nspk.ru", "domain:sbp.nspk.ru", "domain:freekassa.com", "domain:freekassa.ru"], "outboundTag": "direct"},
+        {"type": "field", "domain": ["geosite:yandex","geosite:vk","geosite:mailru","domain:sberbank.ru","domain:online.sberbank.ru","domain:tinkoff.ru","domain:tbank.ru","domain:vtb.ru","domain:online.vtb.ru","domain:alfabank.ru","domain:gosuslugi.ru","domain:esia.gosuslugi.ru","domain:nalog.gov.ru","domain:mos.ru","domain:cbr.ru","domain:apple.com","domain:icloud.com","domain:push.apple.com","domain:mtalk.google.com","domain:gazprombank.ru","domain:raiffeisen.ru","domain:rosbank.ru","domain:open.ru","domain:sovcombank.ru","domain:psbank.ru","domain:ozon.ru","domain:wildberries.ru","domain:avito.ru","domain:nspk.ru","domain:sbp.nspk.ru","domain:freekassa.com","domain:freekassa.ru"], "outboundTag": "direct"},
         {"type": "field", "ip": ["geoip:ru"], "outboundTag": "direct"},
         {"type": "field", "network": "tcp,udp", "balancerTag": "lb_nl"}
       ],
@@ -149,7 +149,7 @@
       "rules": [
         {"type": "field", "protocol": ["bittorrent"], "outboundTag": "block"},
         {"type": "field", "domain": ["geosite:private"], "outboundTag": "direct"},
-        {"type": "field", "domain": ["geosite:yandex", "geosite:vk", "geosite:mailru", "domain:sberbank.ru", "domain:online.sberbank.ru", "domain:tinkoff.ru", "domain:tbank.ru", "domain:vtb.ru", "domain:online.vtb.ru", "domain:alfabank.ru", "domain:gosuslugi.ru", "domain:esia.gosuslugi.ru", "domain:nalog.gov.ru", "domain:mos.ru", "domain:cbr.ru", "domain:apple.com", "domain:icloud.com", "domain:push.apple.com", "domain:mtalk.google.com", "domain:gazprombank.ru", "domain:raiffeisen.ru", "domain:rosbank.ru", "domain:open.ru", "domain:sovcombank.ru", "domain:psbank.ru", "domain:ozon.ru", "domain:wildberries.ru", "domain:avito.ru", "domain:nspk.ru", "domain:sbp.nspk.ru", "domain:freekassa.com", "domain:freekassa.ru"], "outboundTag": "direct"},
+        {"type": "field", "domain": ["geosite:yandex","geosite:vk","geosite:mailru","domain:sberbank.ru","domain:online.sberbank.ru","domain:tinkoff.ru","domain:tbank.ru","domain:vtb.ru","domain:online.vtb.ru","domain:alfabank.ru","domain:gosuslugi.ru","domain:esia.gosuslugi.ru","domain:nalog.gov.ru","domain:mos.ru","domain:cbr.ru","domain:apple.com","domain:icloud.com","domain:push.apple.com","domain:mtalk.google.com","domain:gazprombank.ru","domain:raiffeisen.ru","domain:rosbank.ru","domain:open.ru","domain:sovcombank.ru","domain:psbank.ru","domain:ozon.ru","domain:wildberries.ru","domain:avito.ru","domain:nspk.ru","domain:sbp.nspk.ru","domain:freekassa.com","domain:freekassa.ru"], "outboundTag": "direct"},
         {"type": "field", "ip": ["geoip:ru"], "outboundTag": "direct"},
         {"type": "field", "network": "tcp,udp", "balancerTag": "lb_nl"}
       ],
@@ -250,7 +250,7 @@
       "levels": {"8": {"connIdle": 300, "downlinkOnly": 1, "handshake": 4, "uplinkOnly": 1}},
       "system": {"statsOutboundUplink": true, "statsOutboundDownlink": true}
     },
-    "remarks": "Финляндия - 2.2 🇫🇮",
+    "remarks": "🇺🇸United states",
     "routing": {
       "domainStrategy": "IPIfNonMatch",
       "rules": [
@@ -260,5 +260,87 @@
       ]
     },
     "stats": {}
+  },
+  {
+    "dns": {
+      "servers": [
+        {
+          "address": "https://cloudflare-dns.com/dns-query",
+          "domains": ["geosite:geolocation-!cn"],
+          "skipFallback": true
+        },
+        {
+          "address": "77.88.8.8",
+          "domains": ["domain:ru", "domain:xn--p1ai"],
+          "skipFallback": true
+        }
+      ],
+      "queryStrategy": "UseIPv4"
+    },
+    "routing": {
+      "rules": [
+        {
+          "type": "field",
+          "domain": ["domain:ru", "domain:xn--p1ai"],
+          "outboundTag": "direct"
+        }
+      ],
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch"
+    },
+    "inbounds": [
+      {
+        "tag": "socks",
+        "port": 10808,
+        "listen": "127.0.0.1",
+        "protocol": "socks",
+        "settings": {"udp": true, "auth": "noauth"},
+        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
+      },
+      {
+        "tag": "http",
+        "port": 10809,
+        "listen": "127.0.0.1",
+        "protocol": "http",
+        "settings": {"allowTransparent": false},
+        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "178.154.219.149",
+              "port": 443,
+              "users": [
+                {
+                  "id": "a665822a-2171-41dc-a239-ba49bce6bd13",
+                  "encryption": "none",
+                  "flow": ""
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "grpc",
+          "grpcSettings": {"serviceName": "grpc", "authority": "", "mode": true},
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "api-maps.yandex.ru",
+            "publicKey": "_fDCEIXPBl2p5KzcNXkan3RHM1YcZ-gEIlyAyVIMsHw",
+            "shortId": "aeadff1bf4f7d56c",
+            "spiderX": "/",
+            "fingerprint": "chrome"
+          }
+        }
+      },
+      {"tag": "direct", "protocol": "freedom"},
+      {"tag": "block", "protocol": "blackhole"}
+    ],
+    "remarks": "🇨🇭Швейцария"
   }
 ]
