@@ -1,0 +1,1 @@
+vless://a0b1d2fb7d3f445496f17975ebd715e2@91.84.103.225:8443?flow=xtls-rprx-vision&security=reality&encryption=none&sni=fastnodegate.com&type=tcp&sid=12&fp=chrome&pbk=2yVgbL090645AdR2ctJTq_7eoI1hnsbsWgRb5x-iFEk&mode=&path=&headerType=none#VPN
