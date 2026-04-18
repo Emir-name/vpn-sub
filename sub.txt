@@ -436,7 +436,7 @@
     "log": {
       "access": "/data/user/0/com.happproxy/files/logs/access/access_log.txt",
       "dnsLog": true,
-      "error": "/data/user/0/com.happproxy/files/logs/error/1776510403716_error_log.txt",
+      "error": "/data/user/0/com.happproxy/files/logs/error/1776523173244_error_log.txt",
       "loglevel": "debug"
     },
     "outbounds": [
@@ -444,11 +444,11 @@
         "mux": {"concurrency": -1, "enabled": false, "xudpConcurrency": 8, "xudpProxyUDP443": ""},
         "protocol": "vless",
         "settings": {
-          "vnext": [{"address": "37.128.207.218", "port": 443, "users": [{"encryption": "none", "flow": "xtls-rprx-vision", "id": "f9a0061a-0585-43ab-9cce-12099b48be53", "level": 8, "security": "auto"}]}]
+          "vnext": [{"address": "51.250.6.170", "port": 443, "users": [{"encryption": "none", "flow": "xtls-rprx-vision", "id": "321c91b8-0395-4dd5-a7d5-9df5adc5c32b", "level": 8, "security": "auto"}]}]
         },
         "streamSettings": {
           "network": "tcp",
-          "realitySettings": {"allowInsecure": false, "fingerprint": "firefox", "publicKey": "djTtGqd0XWqtt_WHukU7BTPQSn9o7gIpAosAxMy8tUo", "serverName": "lv.crunch-crunch.com", "shortId": "ea1058117be12087", "show": false},
+          "realitySettings": {"allowInsecure": false, "fingerprint": "chrome", "publicKey": "6S9Wy_u58vloVUxfyds4xCl8QCLklDKwP3uXTyd3THw", "serverName": "esg.x5.ru", "shortId": "43486af307ad2043", "show": false},
           "security": "reality",
           "tcpSettings": {"header": {"type": "none"}}
         },
@@ -461,7 +461,7 @@
       "levels": {"8": {"connIdle": 300, "downlinkOnly": 1, "handshake": 4, "uplinkOnly": 1}},
       "system": {"statsOutboundUplink": true, "statsOutboundDownlink": true}
     },
-    "remarks": "🇱🇻 Латвия #1",
+    "remarks": "🇻🇪Венесуэла",
     "routing": {
       "domainStrategy": "IPIfNonMatch",
       "rules": [
