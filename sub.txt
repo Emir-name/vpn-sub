@@ -327,5 +327,221 @@
       {"tag": "direct", "protocol": "freedom"},
       {"tag": "block", "protocol": "blackhole"}
     ]
+  },
+  {
+    "api": {
+      "listen": "[::1]:10085",
+      "services": ["StatsService"],
+      "tag": "api"
+    },
+    "dns": {
+      "hosts": {"domain:googleapis.cn": "googleapis.com"},
+      "queryStrategy": "UseIP",
+      "servers": [
+        "1.1.1.1",
+        {"address": "1.1.1.1", "domains": [], "port": 53},
+        {"address": "8.8.8.8", "domains": [], "port": 53}
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {"auth": "noauth", "udp": true, "userLevel": 8},
+        "sniffing": {"destOverride": ["http","tls","quic"], "enabled": true},
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {"userLevel": 8},
+        "sniffing": {"destOverride": ["http","tls","quic"], "enabled": true},
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "access": "/data/user/0/com.happproxy/files/logs/access/access_log.txt",
+      "dnsLog": true,
+      "error": "/data/user/0/com.happproxy/files/logs/error/1776510359077_error_log.txt",
+      "loglevel": "debug"
+    },
+    "outbounds": [
+      {
+        "mux": {"concurrency": -1, "enabled": false, "xudpConcurrency": 8, "xudpProxyUDP443": ""},
+        "protocol": "vless",
+        "settings": {
+          "vnext": [{"address": "46.183.20.173", "port": 443, "users": [{"encryption": "none", "flow": "xtls-rprx-vision", "id": "f9a0061a-0585-43ab-9cce-12099b48be53", "level": 8, "security": "auto"}]}]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {"allowInsecure": false, "fingerprint": "firefox", "publicKey": "djTtGqd0XWqtt_WHukU7BTPQSn9o7gIpAosAxMy8tUo", "serverName": "al.crunch-crunch.com", "shortId": "ea1058117be12087", "show": false},
+          "security": "reality",
+          "tcpSettings": {"header": {"type": "none"}}
+        },
+        "tag": "proxy"
+      },
+      {"protocol": "freedom", "tag": "direct"},
+      {"protocol": "blackhole", "tag": "block"}
+    ],
+    "policy": {
+      "levels": {"8": {"connIdle": 300, "downlinkOnly": 1, "handshake": 4, "uplinkOnly": 1}},
+      "system": {"statsOutboundUplink": true, "statsOutboundDownlink": true}
+    },
+    "remarks": "📺 YouTube без рекламы #1",
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {"ip": ["1.1.1.1"], "outboundTag": "proxy", "port": "53"},
+        {"ip": ["8.8.8.8"], "outboundTag": "direct", "port": "53"},
+        {"ip": ["10.0.0.0/8","172.16.0.0/12","192.168.0.0/16","169.254.0.0/16","224.0.0.0/4","255.255.255.255"], "outboundTag": "direct"}
+      ]
+    },
+    "stats": {}
+  },
+  {
+    "api": {
+      "listen": "[::1]:10085",
+      "services": ["StatsService"],
+      "tag": "api"
+    },
+    "dns": {
+      "hosts": {"domain:googleapis.cn": "googleapis.com"},
+      "queryStrategy": "UseIP",
+      "servers": [
+        "1.1.1.1",
+        {"address": "1.1.1.1", "domains": [], "port": 53},
+        {"address": "8.8.8.8", "domains": [], "port": 53}
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {"auth": "noauth", "udp": true, "userLevel": 8},
+        "sniffing": {"destOverride": ["http","tls","quic"], "enabled": true},
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {"userLevel": 8},
+        "sniffing": {"destOverride": ["http","tls","quic"], "enabled": true},
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "access": "/data/user/0/com.happproxy/files/logs/access/access_log.txt",
+      "dnsLog": true,
+      "error": "/data/user/0/com.happproxy/files/logs/error/1776510385073_error_log.txt",
+      "loglevel": "debug"
+    },
+    "outbounds": [
+      {
+        "mux": {"concurrency": -1, "enabled": false, "xudpConcurrency": 8, "xudpProxyUDP443": ""},
+        "protocol": "vless",
+        "settings": {
+          "vnext": [{"address": "93.123.113.36", "port": 443, "users": [{"encryption": "none", "flow": "xtls-rprx-vision", "id": "f9a0061a-0585-43ab-9cce-12099b48be53", "level": 8, "security": "auto"}]}]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {"allowInsecure": false, "fingerprint": "firefox", "publicKey": "djTtGqd0XWqtt_WHukU7BTPQSn9o7gIpAosAxMy8tUo", "serverName": "al.crunch-crunch.com", "shortId": "ea1058117be12087", "show": false},
+          "security": "reality",
+          "tcpSettings": {"header": {"type": "none"}}
+        },
+        "tag": "proxy"
+      },
+      {"protocol": "freedom", "tag": "direct"},
+      {"protocol": "blackhole", "tag": "block"}
+    ],
+    "policy": {
+      "levels": {"8": {"connIdle": 300, "downlinkOnly": 1, "handshake": 4, "uplinkOnly": 1}},
+      "system": {"statsOutboundUplink": true, "statsOutboundDownlink": true}
+    },
+    "remarks": "📺 YouTube без рекламы #2",
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {"ip": ["1.1.1.1"], "outboundTag": "proxy", "port": "53"},
+        {"ip": ["8.8.8.8"], "outboundTag": "direct", "port": "53"},
+        {"ip": ["10.0.0.0/8","172.16.0.0/12","192.168.0.0/16","169.254.0.0/16","224.0.0.0/4","255.255.255.255"], "outboundTag": "direct"}
+      ]
+    },
+    "stats": {}
+  },
+  {
+    "api": {
+      "listen": "[::1]:10085",
+      "services": ["StatsService"],
+      "tag": "api"
+    },
+    "dns": {
+      "hosts": {"domain:googleapis.cn": "googleapis.com"},
+      "queryStrategy": "UseIP",
+      "servers": [
+        "1.1.1.1",
+        {"address": "1.1.1.1", "domains": [], "port": 53},
+        {"address": "8.8.8.8", "domains": [], "port": 53}
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {"auth": "noauth", "udp": true, "userLevel": 8},
+        "sniffing": {"destOverride": ["http","tls","quic"], "enabled": true},
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {"userLevel": 8},
+        "sniffing": {"destOverride": ["http","tls","quic"], "enabled": true},
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "access": "/data/user/0/com.happproxy/files/logs/access/access_log.txt",
+      "dnsLog": true,
+      "error": "/data/user/0/com.happproxy/files/logs/error/1776510403716_error_log.txt",
+      "loglevel": "debug"
+    },
+    "outbounds": [
+      {
+        "mux": {"concurrency": -1, "enabled": false, "xudpConcurrency": 8, "xudpProxyUDP443": ""},
+        "protocol": "vless",
+        "settings": {
+          "vnext": [{"address": "37.128.207.218", "port": 443, "users": [{"encryption": "none", "flow": "xtls-rprx-vision", "id": "f9a0061a-0585-43ab-9cce-12099b48be53", "level": 8, "security": "auto"}]}]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "realitySettings": {"allowInsecure": false, "fingerprint": "firefox", "publicKey": "djTtGqd0XWqtt_WHukU7BTPQSn9o7gIpAosAxMy8tUo", "serverName": "lv.crunch-crunch.com", "shortId": "ea1058117be12087", "show": false},
+          "security": "reality",
+          "tcpSettings": {"header": {"type": "none"}}
+        },
+        "tag": "proxy"
+      },
+      {"protocol": "freedom", "tag": "direct"},
+      {"protocol": "blackhole", "tag": "block"}
+    ],
+    "policy": {
+      "levels": {"8": {"connIdle": 300, "downlinkOnly": 1, "handshake": 4, "uplinkOnly": 1}},
+      "system": {"statsOutboundUplink": true, "statsOutboundDownlink": true}
+    },
+    "remarks": "🇱🇻 Латвия #1",
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {"ip": ["1.1.1.1"], "outboundTag": "proxy", "port": "53"},
+        {"ip": ["8.8.8.8"], "outboundTag": "direct", "port": "53"},
+        {"ip": ["10.0.0.0/8","172.16.0.0/12","192.168.0.0/16","169.254.0.0/16","224.0.0.0/4","255.255.255.255"], "outboundTag": "direct"}
+      ]
+    },
+    "stats": {}
   }
 ]
