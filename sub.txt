@@ -1,27 +1,20 @@
 [
   {
-    "dns": {"servers": ["1.1.1.1", "1.0.0.1"], "queryStrategy": "UseIP"},
+    "dns": {"servers": ["8.8.8.8", "1.1.1.1", "94.140.14.14"], "queryStrategy": "UseIP"},
+    "remarks": "Автовыбор | WiFi/LTE",
     "routing": {
       "rules": [
-        {"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"},
-        {"type": "field", "domain": ["geosite:category-ru"], "outboundTag": "direct"},
-        {"type": "field", "ip": ["geoip:ru"], "outboundTag": "direct"},
-        {"type": "field", "network": "tcp,udp", "balancerTag": "Pink_Balancer_RF"}
+        {"type": "field", "protocol": ["bittorrent"], "outboundTag": "block"},
+        {"type": "field", "domain": ["geosite:private"], "outboundTag": "direct"},
+        {"type": "field", "domain": ["geosite:yandex","geosite:vk","geosite:mailru","domain:sberbank.ru","domain:online.sberbank.ru","domain:tinkoff.ru","domain:tbank.ru","domain:vtb.ru","domain:online.vtb.ru","domain:alfabank.ru","domain:gosuslugi.ru","domain:esia.gosuslugi.ru","domain:nalog.gov.ru","domain:mos.ru","domain:cbr.ru","domain:apple.com","domain:icloud.com","domain:push.apple.com","domain:mtalk.google.com","domain:gazprombank.ru","domain:raiffeisen.ru","domain:rosbank.ru","domain:open.ru","domain:sovcombank.ru","domain:psbank.ru","domain:ozon.ru","domain:wildberries.ru","domain:avito.ru","domain:nspk.ru","domain:sbp.nspk.ru","domain:freekassa.com","domain:freekassa.ru"], "outboundTag": "direct"},
+        {"ip": ["geoip:ru"], "type": "field", "outboundTag": "direct"},
+        {"type": "field", "network": "tcp,udp", "balancerTag": "lb_auto"}
       ],
       "balancers": [
         {
-          "tag": "Pink_Balancer_RF",
-          "selector": ["proxy"],
-          "strategy": {
-            "type": "leastLoad",
-            "settings": {
-              "costs": [{"match": "proxy-6", "value": 5}],
-              "maxRTT": "1s",
-              "expected": 2,
-              "baselines": ["1s"],
-              "tolerance": 0.01
-            }
-          },
+          "tag": "lb_auto",
+          "selector": ["auto-"],
+          "strategy": {"type": "leastLoad", "settings": {"maxRTT": "2s", "expected": 3, "baselines": ["200ms", "400ms"], "tolerance": 0.1}},
           "fallbackTag": "direct"
         }
       ],
@@ -29,22 +22,261 @@
       "domainStrategy": "IPIfNonMatch"
     },
     "inbounds": [
-      {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": {"udp": true, "auth": "noauth"},
-        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": {"allowTransparent": false},
-        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
-      }
+      {"tag": "socks", "port": 10808, "listen": "127.0.0.1", "protocol": "socks", "settings": {"udp": true, "auth": "noauth"}, "sniffing": {"enabled": true, "routeOnly": true, "destOverride": ["http","tls","quic"]}},
+      {"tag": "http", "port": 10809, "listen": "127.0.0.1", "protocol": "http", "settings": {"allowTransparent": false}, "sniffing": {"enabled": true, "routeOnly": true, "destOverride": ["http","tls","quic"]}}
+    ],
+    "outbounds": [
+      {"tag": "auto-", "protocol": "vless", "settings": {"vnext": [{"address": "151.245.136.46", "port": 443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": "xtls-rprx-vision"}]}]}, "streamSettings": {"network": "tcp", "tcpSettings": {}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "4v_4RSmE8ztHfQ4EV8Ym6J-6C8ACtYiznTHcdWJw6WA", "shortId": "aabbccdd", "fingerprint": "chrome"}}},
+      {"tag": "auto--2", "protocol": "vless", "settings": {"vnext": [{"address": "151.245.136.46", "port": 2443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "auto", "host": "", "path": "/"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "dqahhX8zcY5BGM8EP3tjULc6r-eYs1oGQ7EVRhyJJkI", "shortId": "11223344", "fingerprint": "chrome"}}},
+      {"tag": "auto--3", "protocol": "vless", "settings": {"vnext": [{"address": "151.245.136.46", "port": 7443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "grpc", "grpcSettings": {"serviceName": "grpc", "authority": "", "mode": true}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "cbv-Rv71o0fChp6km0HxHnZfzuoRGb2eCBVSGlQHPF0", "shortId": "aabb1122", "fingerprint": "chrome"}}},
+      {"tag": "auto--4", "protocol": "vless", "settings": {"vnext": [{"address": "82.39.215.6", "port": 443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": "xtls-rprx-vision"}]}]}, "streamSettings": {"network": "tcp", "tcpSettings": {}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "4v_4RSmE8ztHfQ4EV8Ym6J-6C8ACtYiznTHcdWJw6WA", "shortId": "aabbccdd", "fingerprint": "chrome"}}},
+      {"tag": "auto--5", "protocol": "vless", "settings": {"vnext": [{"address": "82.39.215.6", "port": 2443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "auto", "host": "", "path": "/"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "dqahhX8zcY5BGM8EP3tjULc6r-eYs1oGQ7EVRhyJJkI", "shortId": "11223344", "fingerprint": "chrome"}}},
+      {"tag": "auto--6", "protocol": "vless", "settings": {"vnext": [{"address": "82.39.215.6", "port": 7443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "grpc", "grpcSettings": {"serviceName": "grpc", "authority": "", "mode": true}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "cbv-Rv71o0fChp6km0HxHnZfzuoRGb2eCBVSGlQHPF0", "shortId": "aabb1122", "fingerprint": "chrome"}}},
+      {"tag": "auto--7", "protocol": "vless", "settings": {"vnext": [{"address": "151.245.136.46", "port": 3443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "packet-up", "host": "", "path": "/packetpath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "U3IpEIMTSF6QAspPrB_EFW3XquDg3X0EWFZ53uPzAgk", "shortId": "aabb3344", "fingerprint": "chrome"}}},
+      {"tag": "auto--8", "protocol": "vless", "settings": {"vnext": [{"address": "151.245.136.46", "port": 4443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "stream-one", "host": "", "path": "/streampath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "M_sPzIUUEtojZ1U8GPAdzCtk4VKojlyBXnHDwEhrR0c", "shortId": "aabb4455", "fingerprint": "chrome"}}},
+      {"tag": "auto--9", "protocol": "vless", "settings": {"vnext": [{"address": "82.39.215.6", "port": 3443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "packet-up", "host": "", "path": "/packetpath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "U3IpEIMTSF6QAspPrB_EFW3XquDg3X0EWFZ53uPzAgk", "shortId": "aabb3344", "fingerprint": "chrome"}}},
+      {"tag": "auto--10", "protocol": "vless", "settings": {"vnext": [{"address": "82.39.215.6", "port": 4443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "stream-one", "host": "", "path": "/streampath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "M_sPzIUUEtojZ1U8GPAdzCtk4VKojlyBXnHDwEhrR0c", "shortId": "aabb4455", "fingerprint": "chrome"}}},
+      {"tag": "auto--11", "protocol": "vless", "settings": {"vnext": [{"address": "152.114.194.71", "port": 443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": "xtls-rprx-vision"}]}]}, "streamSettings": {"network": "tcp", "tcpSettings": {}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "4v_4RSmE8ztHfQ4EV8Ym6J-6C8ACtYiznTHcdWJw6WA", "shortId": "aabbccdd", "fingerprint": "chrome"}}},
+      {"tag": "auto--12", "protocol": "vless", "settings": {"vnext": [{"address": "152.114.194.71", "port": 2443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "auto", "host": "", "path": "/"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "dqahhX8zcY5BGM8EP3tjULc6r-eYs1oGQ7EVRhyJJkI", "shortId": "11223344", "fingerprint": "chrome"}}},
+      {"tag": "auto--13", "protocol": "vless", "settings": {"vnext": [{"address": "152.114.194.71", "port": 7443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "grpc", "grpcSettings": {"serviceName": "grpc", "authority": "", "mode": true}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "cbv-Rv71o0fChp6km0HxHnZfzuoRGb2eCBVSGlQHPF0", "shortId": "aabb1122", "fingerprint": "chrome"}}},
+      {"tag": "auto--14", "protocol": "vless", "settings": {"vnext": [{"address": "152.114.194.71", "port": 3443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "packet-up", "host": "", "path": "/packetpath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "U3IpEIMTSF6QAspPrB_EFW3XquDg3X0EWFZ53uPzAgk", "shortId": "aabb3344", "fingerprint": "chrome"}}},
+      {"tag": "auto--15", "protocol": "vless", "settings": {"vnext": [{"address": "152.114.194.71", "port": 4443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "stream-one", "host": "", "path": "/streampath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "M_sPzIUUEtojZ1U8GPAdzCtk4VKojlyBXnHDwEhrR0c", "shortId": "aabb4455", "fingerprint": "chrome"}}},
+      {"tag": "auto--16", "protocol": "vless", "settings": {"vnext": [{"address": "162.120.16.7", "port": 443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": "xtls-rprx-vision"}]}]}, "streamSettings": {"network": "tcp", "tcpSettings": {}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "4v_4RSmE8ztHfQ4EV8Ym6J-6C8ACtYiznTHcdWJw6WA", "shortId": "aabbccdd", "fingerprint": "chrome"}}},
+      {"tag": "auto--17", "protocol": "vless", "settings": {"vnext": [{"address": "162.120.16.7", "port": 2443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "auto", "host": "", "path": "/"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "dqahhX8zcY5BGM8EP3tjULc6r-eYs1oGQ7EVRhyJJkI", "shortId": "11223344", "fingerprint": "chrome"}}},
+      {"tag": "auto--18", "protocol": "vless", "settings": {"vnext": [{"address": "162.120.16.7", "port": 7443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "grpc", "grpcSettings": {"serviceName": "grpc", "authority": "", "mode": true}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "cbv-Rv71o0fChp6km0HxHnZfzuoRGb2eCBVSGlQHPF0", "shortId": "aabb1122", "fingerprint": "chrome"}}},
+      {"tag": "auto--19", "protocol": "vless", "settings": {"vnext": [{"address": "162.120.16.7", "port": 3443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "packet-up", "host": "", "path": "/packetpath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "U3IpEIMTSF6QAspPrB_EFW3XquDg3X0EWFZ53uPzAgk", "shortId": "aabb3344", "fingerprint": "chrome"}}},
+      {"tag": "auto--20", "protocol": "vless", "settings": {"vnext": [{"address": "162.120.16.7", "port": 4443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "stream-one", "host": "", "path": "/streampath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "M_sPzIUUEtojZ1U8GPAdzCtk4VKojlyBXnHDwEhrR0c", "shortId": "aabb4455", "fingerprint": "chrome"}}},
+      {"tag": "direct", "protocol": "freedom"},
+      {"tag": "block", "protocol": "blackhole"}
+    ],
+    "burstObservatory": {
+      "pingConfig": {"timeout": "3s", "interval": "45s", "sampling": 2, "destination": "https://connectivitycheck.gstatic.com/generate_204", "connectivity": "https://connectivitycheck.gstatic.com/generate_204"},
+      "subjectSelector": ["auto-"]
+    }
+  },
+  {
+    "dns": {"servers": ["8.8.8.8", "1.1.1.1", "94.140.14.14"], "queryStrategy": "UseIP"},
+    "remarks": "🇩🇪 Германия | LTE/Wifi",
+    "routing": {
+      "rules": [
+        {"type": "field", "protocol": ["bittorrent"], "outboundTag": "block"},
+        {"type": "field", "domain": ["geosite:private"], "outboundTag": "direct"},
+        {"type": "field", "domain": ["geosite:yandex","geosite:vk","geosite:mailru","domain:sberbank.ru","domain:online.sberbank.ru","domain:tinkoff.ru","domain:tbank.ru","domain:vtb.ru","domain:online.vtb.ru","domain:alfabank.ru","domain:gosuslugi.ru","domain:esia.gosuslugi.ru","domain:nalog.gov.ru","domain:mos.ru","domain:cbr.ru","domain:apple.com","domain:icloud.com","domain:push.apple.com","domain:mtalk.google.com","domain:gazprombank.ru","domain:raiffeisen.ru","domain:rosbank.ru","domain:open.ru","domain:sovcombank.ru","domain:psbank.ru","domain:ozon.ru","domain:wildberries.ru","domain:avito.ru","domain:nspk.ru","domain:sbp.nspk.ru","domain:freekassa.com","domain:freekassa.ru"], "outboundTag": "direct"},
+        {"ip": ["geoip:ru"], "type": "field", "outboundTag": "direct"},
+        {"type": "field", "network": "tcp,udp", "balancerTag": "lb_de"}
+      ],
+      "balancers": [
+        {
+          "tag": "lb_de",
+          "selector": ["de-"],
+          "strategy": {"type": "leastLoad", "settings": {"maxRTT": "3s", "expected": 2, "baselines": ["300ms", "500ms"], "tolerance": 0.01}},
+          "fallbackTag": "direct"
+        }
+      ],
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch"
+    },
+    "inbounds": [
+      {"tag": "socks", "port": 10808, "listen": "127.0.0.1", "protocol": "socks", "settings": {"udp": true, "auth": "noauth"}, "sniffing": {"enabled": true, "routeOnly": true, "destOverride": ["http","tls","quic"]}},
+      {"tag": "http", "port": 10809, "listen": "127.0.0.1", "protocol": "http", "settings": {"allowTransparent": false}, "sniffing": {"enabled": true, "routeOnly": true, "destOverride": ["http","tls","quic"]}}
+    ],
+    "outbounds": [
+      {"tag": "de-", "protocol": "vless", "settings": {"vnext": [{"address": "82.39.215.6", "port": 443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": "xtls-rprx-vision"}]}]}, "streamSettings": {"network": "tcp", "tcpSettings": {}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "4v_4RSmE8ztHfQ4EV8Ym6J-6C8ACtYiznTHcdWJw6WA", "shortId": "aabbccdd", "fingerprint": "chrome"}}},
+      {"tag": "de--2", "protocol": "vless", "settings": {"vnext": [{"address": "82.39.215.6", "port": 2443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "auto", "host": "", "path": "/"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "dqahhX8zcY5BGM8EP3tjULc6r-eYs1oGQ7EVRhyJJkI", "shortId": "11223344", "fingerprint": "chrome"}}},
+      {"tag": "de--3", "protocol": "vless", "settings": {"vnext": [{"address": "82.39.215.6", "port": 7443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "grpc", "grpcSettings": {"serviceName": "grpc", "authority": "", "mode": true}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "cbv-Rv71o0fChp6km0HxHnZfzuoRGb2eCBVSGlQHPF0", "shortId": "aabb1122", "fingerprint": "chrome"}}},
+      {"tag": "de--4", "protocol": "vless", "settings": {"vnext": [{"address": "82.39.215.6", "port": 3443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "packet-up", "host": "", "path": "/packetpath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "U3IpEIMTSF6QAspPrB_EFW3XquDg3X0EWFZ53uPzAgk", "shortId": "aabb3344", "fingerprint": "chrome"}}},
+      {"tag": "de--5", "protocol": "vless", "settings": {"vnext": [{"address": "82.39.215.6", "port": 4443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "stream-one", "host": "", "path": "/streampath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "M_sPzIUUEtojZ1U8GPAdzCtk4VKojlyBXnHDwEhrR0c", "shortId": "aabb4455", "fingerprint": "chrome"}}},
+      {"tag": "direct", "protocol": "freedom"},
+      {"tag": "block", "protocol": "blackhole"}
+    ],
+    "burstObservatory": {
+      "pingConfig": {"timeout": "5s", "interval": "30s", "sampling": 3, "destination": "https://connectivitycheck.gstatic.com/generate_204", "connectivity": "https://connectivitycheck.gstatic.com/generate_204"},
+      "subjectSelector": ["de-"]
+    }
+  },
+  {
+    "dns": {"servers": ["8.8.8.8", "1.1.1.1", "94.140.14.14"], "queryStrategy": "UseIP"},
+    "remarks": "🇺🇸 США | LTE/Wifi",
+    "routing": {
+      "rules": [
+        {"type": "field", "protocol": ["bittorrent"], "outboundTag": "block"},
+        {"type": "field", "domain": ["geosite:private"], "outboundTag": "direct"},
+        {"type": "field", "domain": ["geosite:yandex","geosite:vk","geosite:mailru","domain:sberbank.ru","domain:online.sberbank.ru","domain:tinkoff.ru","domain:tbank.ru","domain:vtb.ru","domain:online.vtb.ru","domain:alfabank.ru","domain:gosuslugi.ru","domain:esia.gosuslugi.ru","domain:nalog.gov.ru","domain:mos.ru","domain:cbr.ru","domain:apple.com","domain:icloud.com","domain:push.apple.com","domain:mtalk.google.com","domain:gazprombank.ru","domain:raiffeisen.ru","domain:rosbank.ru","domain:open.ru","domain:sovcombank.ru","domain:psbank.ru","domain:ozon.ru","domain:wildberries.ru","domain:avito.ru","domain:nspk.ru","domain:sbp.nspk.ru","domain:freekassa.com","domain:freekassa.ru"], "outboundTag": "direct"},
+        {"ip": ["geoip:ru"], "type": "field", "outboundTag": "direct"},
+        {"type": "field", "network": "tcp,udp", "balancerTag": "lb_us"}
+      ],
+      "balancers": [
+        {
+          "tag": "lb_us",
+          "selector": ["us-"],
+          "strategy": {"type": "leastLoad", "settings": {"maxRTT": "3s", "expected": 2, "baselines": ["300ms", "500ms"], "tolerance": 0.01}},
+          "fallbackTag": "direct"
+        }
+      ],
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch"
+    },
+    "inbounds": [
+      {"tag": "socks", "port": 10808, "listen": "127.0.0.1", "protocol": "socks", "settings": {"udp": true, "auth": "noauth"}, "sniffing": {"enabled": true, "routeOnly": true, "destOverride": ["http","tls","quic"]}},
+      {"tag": "http", "port": 10809, "listen": "127.0.0.1", "protocol": "http", "settings": {"allowTransparent": false}, "sniffing": {"enabled": true, "routeOnly": true, "destOverride": ["http","tls","quic"]}}
+    ],
+    "outbounds": [
+      {"tag": "us-", "protocol": "vless", "settings": {"vnext": [{"address": "162.120.16.7", "port": 443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": "xtls-rprx-vision"}]}]}, "streamSettings": {"network": "tcp", "tcpSettings": {}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "4v_4RSmE8ztHfQ4EV8Ym6J-6C8ACtYiznTHcdWJw6WA", "shortId": "aabbccdd", "fingerprint": "chrome"}}},
+      {"tag": "us--2", "protocol": "vless", "settings": {"vnext": [{"address": "162.120.16.7", "port": 2443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "auto", "host": "", "path": "/"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "dqahhX8zcY5BGM8EP3tjULc6r-eYs1oGQ7EVRhyJJkI", "shortId": "11223344", "fingerprint": "chrome"}}},
+      {"tag": "us--3", "protocol": "vless", "settings": {"vnext": [{"address": "162.120.16.7", "port": 7443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "grpc", "grpcSettings": {"serviceName": "grpc", "authority": "", "mode": true}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "cbv-Rv71o0fChp6km0HxHnZfzuoRGb2eCBVSGlQHPF0", "shortId": "aabb1122", "fingerprint": "chrome"}}},
+      {"tag": "us--4", "protocol": "vless", "settings": {"vnext": [{"address": "162.120.16.7", "port": 3443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "packet-up", "host": "", "path": "/packetpath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "U3IpEIMTSF6QAspPrB_EFW3XquDg3X0EWFZ53uPzAgk", "shortId": "aabb3344", "fingerprint": "chrome"}}},
+      {"tag": "us--5", "protocol": "vless", "settings": {"vnext": [{"address": "162.120.16.7", "port": 4443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "stream-one", "host": "", "path": "/streampath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "M_sPzIUUEtojZ1U8GPAdzCtk4VKojlyBXnHDwEhrR0c", "shortId": "aabb4455", "fingerprint": "chrome"}}},
+      {"tag": "direct", "protocol": "freedom"},
+      {"tag": "block", "protocol": "blackhole"}
+    ],
+    "burstObservatory": {
+      "pingConfig": {"timeout": "5s", "interval": "30s", "sampling": 3, "destination": "https://connectivitycheck.gstatic.com/generate_204", "connectivity": "https://connectivitycheck.gstatic.com/generate_204"},
+      "subjectSelector": ["us-"]
+    }
+  },
+  {
+    "dns": {"servers": ["8.8.8.8", "1.1.1.1", "94.140.14.14"], "queryStrategy": "UseIP"},
+    "remarks": "🇪🇸 Испания | LTE/Wifi",
+    "routing": {
+      "rules": [
+        {"type": "field", "protocol": ["bittorrent"], "outboundTag": "block"},
+        {"type": "field", "domain": ["geosite:private"], "outboundTag": "direct"},
+        {"type": "field", "domain": ["geosite:yandex","geosite:vk","geosite:mailru","domain:sberbank.ru","domain:online.sberbank.ru","domain:tinkoff.ru","domain:tbank.ru","domain:vtb.ru","domain:online.vtb.ru","domain:alfabank.ru","domain:gosuslugi.ru","domain:esia.gosuslugi.ru","domain:nalog.gov.ru","domain:mos.ru","domain:cbr.ru","domain:apple.com","domain:icloud.com","domain:push.apple.com","domain:mtalk.google.com","domain:gazprombank.ru","domain:raiffeisen.ru","domain:rosbank.ru","domain:open.ru","domain:sovcombank.ru","domain:psbank.ru","domain:ozon.ru","domain:wildberries.ru","domain:avito.ru","domain:nspk.ru","domain:sbp.nspk.ru","domain:freekassa.com","domain:freekassa.ru"], "outboundTag": "direct"},
+        {"ip": ["geoip:ru"], "type": "field", "outboundTag": "direct"},
+        {"type": "field", "network": "tcp,udp", "balancerTag": "lb_es"}
+      ],
+      "balancers": [
+        {
+          "tag": "lb_es",
+          "selector": ["es-"],
+          "strategy": {"type": "leastLoad", "settings": {"maxRTT": "3s", "expected": 2, "baselines": ["300ms", "500ms"], "tolerance": 0.01}},
+          "fallbackTag": "direct"
+        }
+      ],
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch"
+    },
+    "inbounds": [
+      {"tag": "socks", "port": 10808, "listen": "127.0.0.1", "protocol": "socks", "settings": {"udp": true, "auth": "noauth"}, "sniffing": {"enabled": true, "routeOnly": true, "destOverride": ["http","tls","quic"]}},
+      {"tag": "http", "port": 10809, "listen": "127.0.0.1", "protocol": "http", "settings": {"allowTransparent": false}, "sniffing": {"enabled": true, "routeOnly": true, "destOverride": ["http","tls","quic"]}}
+    ],
+    "outbounds": [
+      {"tag": "es-", "protocol": "vless", "settings": {"vnext": [{"address": "152.114.194.71", "port": 443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": "xtls-rprx-vision"}]}]}, "streamSettings": {"network": "tcp", "tcpSettings": {}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "4v_4RSmE8ztHfQ4EV8Ym6J-6C8ACtYiznTHcdWJw6WA", "shortId": "aabbccdd", "fingerprint": "chrome"}}},
+      {"tag": "es--2", "protocol": "vless", "settings": {"vnext": [{"address": "152.114.194.71", "port": 2443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "auto", "host": "", "path": "/"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "dqahhX8zcY5BGM8EP3tjULc6r-eYs1oGQ7EVRhyJJkI", "shortId": "11223344", "fingerprint": "chrome"}}},
+      {"tag": "es--3", "protocol": "vless", "settings": {"vnext": [{"address": "152.114.194.71", "port": 7443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "grpc", "grpcSettings": {"serviceName": "grpc", "authority": "", "mode": true}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "cbv-Rv71o0fChp6km0HxHnZfzuoRGb2eCBVSGlQHPF0", "shortId": "aabb1122", "fingerprint": "chrome"}}},
+      {"tag": "es--4", "protocol": "vless", "settings": {"vnext": [{"address": "152.114.194.71", "port": 3443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "packet-up", "host": "", "path": "/packetpath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "U3IpEIMTSF6QAspPrB_EFW3XquDg3X0EWFZ53uPzAgk", "shortId": "aabb3344", "fingerprint": "chrome"}}},
+      {"tag": "es--5", "protocol": "vless", "settings": {"vnext": [{"address": "152.114.194.71", "port": 4443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "stream-one", "host": "", "path": "/streampath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "M_sPzIUUEtojZ1U8GPAdzCtk4VKojlyBXnHDwEhrR0c", "shortId": "aabb4455", "fingerprint": "chrome"}}},
+      {"tag": "direct", "protocol": "freedom"},
+      {"tag": "block", "protocol": "blackhole"}
+    ],
+    "burstObservatory": {
+      "pingConfig": {"timeout": "5s", "interval": "30s", "sampling": 3, "destination": "https://connectivitycheck.gstatic.com/generate_204", "connectivity": "https://connectivitycheck.gstatic.com/generate_204"},
+      "subjectSelector": ["es-"]
+    }
+  },
+  {
+    "dns": {"servers": ["8.8.8.8", "1.1.1.1", "94.140.14.14"], "queryStrategy": "UseIP"},
+    "remarks": "🇳🇱 Нидерланды | LTE/Wifi",
+    "routing": {
+      "rules": [
+        {"type": "field", "protocol": ["bittorrent"], "outboundTag": "block"},
+        {"type": "field", "domain": ["geosite:private"], "outboundTag": "direct"},
+        {"type": "field", "domain": ["geosite:yandex","geosite:vk","geosite:mailru","domain:sberbank.ru","domain:online.sberbank.ru","domain:tinkoff.ru","domain:tbank.ru","domain:vtb.ru","domain:online.vtb.ru","domain:alfabank.ru","domain:gosuslugi.ru","domain:esia.gosuslugi.ru","domain:nalog.gov.ru","domain:mos.ru","domain:cbr.ru","domain:apple.com","domain:icloud.com","domain:push.apple.com","domain:mtalk.google.com","domain:gazprombank.ru","domain:raiffeisen.ru","domain:rosbank.ru","domain:open.ru","domain:sovcombank.ru","domain:psbank.ru","domain:ozon.ru","domain:wildberries.ru","domain:avito.ru","domain:nspk.ru","domain:sbp.nspk.ru","domain:freekassa.com","domain:freekassa.ru"], "outboundTag": "direct"},
+        {"ip": ["geoip:ru"], "type": "field", "outboundTag": "direct"},
+        {"type": "field", "network": "tcp,udp", "balancerTag": "lb_nl"}
+      ],
+      "balancers": [
+        {
+          "tag": "lb_nl",
+          "selector": ["nl-"],
+          "strategy": {"type": "leastLoad", "settings": {"maxRTT": "3s", "expected": 2, "baselines": ["300ms", "500ms"], "tolerance": 0.01}},
+          "fallbackTag": "direct"
+        }
+      ],
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch"
+    },
+    "inbounds": [
+      {"tag": "socks", "port": 10808, "listen": "127.0.0.1", "protocol": "socks", "settings": {"udp": true, "auth": "noauth"}, "sniffing": {"enabled": true, "routeOnly": true, "destOverride": ["http","tls","quic"]}},
+      {"tag": "http", "port": 10809, "listen": "127.0.0.1", "protocol": "http", "settings": {"allowTransparent": false}, "sniffing": {"enabled": true, "routeOnly": true, "destOverride": ["http","tls","quic"]}}
+    ],
+    "outbounds": [
+      {"tag": "nl-", "protocol": "vless", "settings": {"vnext": [{"address": "151.245.136.46", "port": 2443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "auto", "host": "", "path": "/"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "dqahhX8zcY5BGM8EP3tjULc6r-eYs1oGQ7EVRhyJJkI", "shortId": "11223344", "fingerprint": "chrome"}}},
+      {"tag": "nl--2", "protocol": "vless", "settings": {"vnext": [{"address": "151.245.136.46", "port": 7443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "grpc", "grpcSettings": {"serviceName": "grpc", "authority": "", "mode": true}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "cbv-Rv71o0fChp6km0HxHnZfzuoRGb2eCBVSGlQHPF0", "shortId": "aabb1122", "fingerprint": "chrome"}}},
+      {"tag": "nl--3", "protocol": "vless", "settings": {"vnext": [{"address": "151.245.136.46", "port": 3443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "packet-up", "host": "", "path": "/packetpath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "U3IpEIMTSF6QAspPrB_EFW3XquDg3X0EWFZ53uPzAgk", "shortId": "aabb3344", "fingerprint": "chrome"}}},
+      {"tag": "nl--4", "protocol": "vless", "settings": {"vnext": [{"address": "151.245.136.46", "port": 4443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "stream-one", "host": "", "path": "/streampath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "M_sPzIUUEtojZ1U8GPAdzCtk4VKojlyBXnHDwEhrR0c", "shortId": "aabb4455", "fingerprint": "chrome"}}},
+      {"tag": "direct", "protocol": "freedom"},
+      {"tag": "block", "protocol": "blackhole"}
+    ],
+    "burstObservatory": {
+      "pingConfig": {"timeout": "5s", "interval": "30s", "sampling": 3, "destination": "https://connectivitycheck.gstatic.com/generate_204", "connectivity": "https://connectivitycheck.gstatic.com/generate_204"},
+      "subjectSelector": ["nl-"]
+    }
+  },
+  {
+    "dns": {"servers": ["8.8.8.8", "1.1.1.1", "94.140.14.14"], "queryStrategy": "UseIP"},
+    "remarks": "🇳🇱 Обход | Нидерланды",
+    "routing": {
+      "rules": [
+        {"type": "field", "protocol": ["bittorrent"], "outboundTag": "block"},
+        {"type": "field", "domain": ["geosite:private"], "outboundTag": "direct"},
+        {"type": "field", "domain": ["geosite:yandex","geosite:vk","geosite:mailru","domain:sberbank.ru","domain:online.sberbank.ru","domain:tinkoff.ru","domain:tbank.ru","domain:vtb.ru","domain:online.vtb.ru","domain:alfabank.ru","domain:gosuslugi.ru","domain:esia.gosuslugi.ru","domain:nalog.gov.ru","domain:mos.ru","domain:cbr.ru","domain:apple.com","domain:icloud.com","domain:push.apple.com","domain:mtalk.google.com","domain:gazprombank.ru","domain:raiffeisen.ru","domain:rosbank.ru","domain:open.ru","domain:sovcombank.ru","domain:psbank.ru","domain:ozon.ru","domain:wildberries.ru","domain:avito.ru","domain:nspk.ru","domain:sbp.nspk.ru","domain:freekassa.com","domain:freekassa.ru"], "outboundTag": "direct"},
+        {"ip": ["geoip:ru"], "type": "field", "outboundTag": "direct"},
+        {"type": "field", "network": "tcp,udp", "balancerTag": "lb_ru_nl"}
+      ],
+      "balancers": [
+        {
+          "tag": "lb_ru_nl",
+          "selector": ["ru-nl-"],
+          "strategy": {"type": "leastLoad", "settings": {"maxRTT": "3s", "expected": 2, "baselines": ["300ms", "500ms"], "tolerance": 0.01}},
+          "fallbackTag": "direct"
+        }
+      ],
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch"
+    },
+    "inbounds": [
+      {"tag": "socks", "port": 10808, "listen": "127.0.0.1", "protocol": "socks", "settings": {"udp": true, "auth": "noauth"}, "sniffing": {"enabled": true, "routeOnly": true, "destOverride": ["http","tls","quic"]}},
+      {"tag": "http", "port": 10809, "listen": "127.0.0.1", "protocol": "http", "settings": {"allowTransparent": false}, "sniffing": {"enabled": true, "routeOnly": true, "destOverride": ["http","tls","quic"]}}
+    ],
+    "outbounds": [
+      {"tag": "ru-nl-", "protocol": "vless", "settings": {"vnext": [{"address": "158.160.209.94", "port": 443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": "xtls-rprx-vision"}]}]}, "streamSettings": {"network": "tcp", "tcpSettings": {}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "4v_4RSmE8ztHfQ4EV8Ym6J-6C8ACtYiznTHcdWJw6WA", "shortId": "aabbccdd", "fingerprint": "chrome"}}},
+      {"tag": "ru-nl--2", "protocol": "vless", "settings": {"vnext": [{"address": "158.160.209.94", "port": 2443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "auto", "host": "", "path": "/"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "dqahhX8zcY5BGM8EP3tjULc6r-eYs1oGQ7EVRhyJJkI", "shortId": "11223344", "fingerprint": "chrome"}}},
+      {"tag": "ru-nl--3", "protocol": "vless", "settings": {"vnext": [{"address": "158.160.209.94", "port": 7443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "grpc", "grpcSettings": {"serviceName": "grpc", "authority": "", "mode": true}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "cbv-Rv71o0fChp6km0HxHnZfzuoRGb2eCBVSGlQHPF0", "shortId": "aabb1122", "fingerprint": "chrome"}}},
+      {"tag": "ru-nl--4", "protocol": "vless", "settings": {"vnext": [{"address": "158.160.209.94", "port": 3443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "packet-up", "host": "", "path": "/packetpath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "U3IpEIMTSF6QAspPrB_EFW3XquDg3X0EWFZ53uPzAgk", "shortId": "aabb3344", "fingerprint": "chrome"}}},
+      {"tag": "ru-nl--5", "protocol": "vless", "settings": {"vnext": [{"address": "158.160.209.94", "port": 4443, "users": [{"id": "7fbeb76f-2fa1-4a5a-9f99-4dbfaafb4da2", "encryption": "none", "flow": ""}]}]}, "streamSettings": {"network": "xhttp", "xhttpSettings": {"mode": "stream-one", "host": "", "path": "/streampath"}, "security": "reality", "realitySettings": {"serverName": "www.google.com", "publicKey": "M_sPzIUUEtojZ1U8GPAdzCtk4VKojlyBXnHDwEhrR0c", "shortId": "aabb4455", "fingerprint": "chrome"}}},
+      {"tag": "direct", "protocol": "freedom"},
+      {"tag": "block", "protocol": "blackhole"}
+    ],
+    "burstObservatory": {
+      "pingConfig": {"timeout": "5s", "interval": "30s", "sampling": 3, "destination": "https://connectivitycheck.gstatic.com/generate_204", "connectivity": "https://connectivitycheck.gstatic.com/generate_204"},
+      "subjectSelector": ["ru-nl-"]
+    }
+  },
+  {
+    "dns": {"servers": ["1.1.1.1", "1.0.0.1"], "queryStrategy": "UseIP"},
+    "remarks": "⭐️ Самый быстрый",
+    "routing": {
+      "rules": [
+        {"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"},
+        {"type": "field", "domain": ["geosite:category-ru"], "outboundTag": "direct"},
+        {"ip": ["geoip:ru"], "type": "field", "outboundTag": "direct"},
+        {"type": "field", "network": "tcp,udp", "balancerTag": "Pink_Balancer_RF"}
+      ],
+      "balancers": [
+        {
+          "tag": "Pink_Balancer_RF",
+          "selector": ["proxy"],
+          "strategy": {"type": "leastLoad", "settings": {"costs": [{"match": "proxy-6", "value": 5}], "maxRTT": "1s", "expected": 2, "baselines": ["1s"], "tolerance": 0.01}},
+          "fallbackTag": "direct"
+        }
+      ],
+      "domainMatcher": "hybrid",
+      "domainStrategy": "IPIfNonMatch"
+    },
+    "inbounds": [
+      {"tag": "socks", "port": 10808, "listen": "127.0.0.1", "protocol": "socks", "settings": {"udp": true, "auth": "noauth"}, "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http","tls","quic"]}},
+      {"tag": "http", "port": 10809, "listen": "127.0.0.1", "protocol": "http", "settings": {"allowTransparent": false}, "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http","tls","quic"]}}
     ],
     "outbounds": [
       {"tag": "proxy", "protocol": "vless", "settings": {"vnext": [{"address": "nld.pink-world.ru", "port": 443, "users": [{"id": "c5bbdac7-6ff5-4762-87bf-870f55a03581", "encryption": "none", "flow": "xtls-rprx-vision"}]}]}, "streamSettings": {"network": "tcp", "tcpSettings": {}, "security": "reality", "realitySettings": {"serverName": "nld.pink-world.ru", "publicKey": "tB6tQr-pmLTdMM8DVOb9KsS27lDkAjjelbdu_Gp1SR0", "shortId": "f27d8b541b5f48bf", "fingerprint": "chrome"}}},
@@ -58,231 +290,42 @@
     "burstObservatory": {
       "pingConfig": {"timeout": "3s", "interval": "1m", "sampling": 1, "destination": "http://www.gstatic.com/generate_204", "connectivity": ""},
       "subjectSelector": ["proxy"]
-    },
-    "remarks": "⭐️ Самый быстрый"
+    }
   },
   {
     "dns": {"servers": ["1.1.1.1", "1.0.0.1"], "queryStrategy": "UseIP"},
+    "remarks": "🇬🇧 Великобритания",
     "routing": {
       "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}],
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch"
     },
     "inbounds": [
-      {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": {"udp": true, "auth": "noauth"},
-        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": {"allowTransparent": false},
-        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
-      }
-    ],
-    "outbounds": [
-      {"tag": "proxy", "protocol": "vless", "settings": {"vnext": [{"address": "nld.pink-world.ru", "port": 443, "users": [{"id": "c5bbdac7-6ff5-4762-87bf-870f55a03581", "encryption": "none", "flow": "xtls-rprx-vision"}]}]}, "streamSettings": {"network": "tcp", "tcpSettings": {}, "security": "reality", "realitySettings": {"serverName": "nld.pink-world.ru", "publicKey": "tB6tQr-pmLTdMM8DVOb9KsS27lDkAjjelbdu_Gp1SR0", "shortId": "f27d8b541b5f48bf", "fingerprint": "chrome"}}},
-      {"tag": "direct", "protocol": "freedom"},
-      {"tag": "block", "protocol": "blackhole"}
-    ],
-    "remarks": "🇳🇱 Нидерланды"
-  },
-  {
-    "dns": {"servers": ["1.1.1.1", "1.0.0.1"], "queryStrategy": "UseIP"},
-    "routing": {
-      "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": {"udp": true, "auth": "noauth"},
-        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": {"allowTransparent": false},
-        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
-      }
-    ],
-    "outbounds": [
-      {"tag": "proxy", "protocol": "vless", "settings": {"vnext": [{"address": "ge.pink-world.ru", "port": 443, "users": [{"id": "c5bbdac7-6ff5-4762-87bf-870f55a03581", "encryption": "none", "flow": "xtls-rprx-vision"}]}]}, "streamSettings": {"network": "tcp", "tcpSettings": {}, "security": "reality", "realitySettings": {"serverName": "ge.pink-world.ru", "publicKey": "_wJJxZfV51dD72qGexYZIyqeKDFXWDGClp5D-gF1lVk", "shortId": "5bb4c3a77963e3fa", "fingerprint": "chrome"}}},
-      {"tag": "direct", "protocol": "freedom"},
-      {"tag": "block", "protocol": "blackhole"}
-    ],
-    "remarks": "🇩🇪 Германия"
-  },
-  {
-    "dns": {"servers": ["1.1.1.1", "1.0.0.1"], "queryStrategy": "UseIP"},
-    "routing": {
-      "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": {"udp": true, "auth": "noauth"},
-        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": {"allowTransparent": false},
-        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
-      }
-    ],
-    "outbounds": [
-      {"tag": "proxy", "protocol": "vless", "settings": {"vnext": [{"address": "fr.pink-world.ru", "port": 443, "users": [{"id": "c5bbdac7-6ff5-4762-87bf-870f55a03581", "encryption": "none", "flow": "xtls-rprx-vision"}]}]}, "streamSettings": {"network": "tcp", "tcpSettings": {}, "security": "reality", "realitySettings": {"serverName": "fr.pink-world.ru", "publicKey": "XoJMrCB2aP6YCHbW4vsCoDF2h_d8eGZs3u_UAddWBBA", "shortId": "9ad0e48c54dc7c41", "fingerprint": "chrome"}}},
-      {"tag": "direct", "protocol": "freedom"},
-      {"tag": "block", "protocol": "blackhole"}
-    ],
-    "remarks": "🇫🇷 Франция"
-  },
-  {
-    "dns": {"servers": ["1.1.1.1", "1.0.0.1"], "queryStrategy": "UseIP"},
-    "routing": {
-      "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": {"udp": true, "auth": "noauth"},
-        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": {"allowTransparent": false},
-        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
-      }
-    ],
-    "outbounds": [
-      {"tag": "proxy", "protocol": "vless", "settings": {"vnext": [{"address": "as.pink-world.ru", "port": 443, "users": [{"id": "c5bbdac7-6ff5-4762-87bf-870f55a03581", "encryption": "none", "flow": "xtls-rprx-vision"}]}]}, "streamSettings": {"network": "tcp", "tcpSettings": {}, "security": "reality", "realitySettings": {"serverName": "as.pink-world.ru", "publicKey": "oerohHz9wAhDt-0XkxCr_3khOYJxMJSJVt4sW8AP6VA", "shortId": "942d92bfeb27e278", "fingerprint": "chrome"}}},
-      {"tag": "direct", "protocol": "freedom"},
-      {"tag": "block", "protocol": "blackhole"}
-    ],
-    "remarks": "🇦🇹 Австрия"
-  },
-  {
-    "dns": {"servers": ["1.1.1.1", "1.0.0.1"], "queryStrategy": "UseIP"},
-    "routing": {
-      "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": {"udp": true, "auth": "noauth"},
-        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": {"allowTransparent": false},
-        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
-      }
-    ],
-    "outbounds": [
-      {"tag": "proxy", "protocol": "vless", "settings": {"vnext": [{"address": "usa.pink-world.ru", "port": 443, "users": [{"id": "c5bbdac7-6ff5-4762-87bf-870f55a03581", "encryption": "none", "flow": "xtls-rprx-vision"}]}]}, "streamSettings": {"network": "tcp", "tcpSettings": {}, "security": "reality", "realitySettings": {"serverName": "usa.pink-world.ru", "publicKey": "DS9mX6cMb5wvwFzga8yN2NLbs7soXM7038_P23yPKwk", "shortId": "8ffa160e608bf539", "fingerprint": "chrome"}}},
-      {"tag": "direct", "protocol": "freedom"},
-      {"tag": "block", "protocol": "blackhole"}
-    ],
-    "remarks": "🇺🇸 Соединенные Штаты"
-  },
-  {
-    "dns": {"servers": ["1.1.1.1", "1.0.0.1"], "queryStrategy": "UseIP"},
-    "routing": {
-      "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "IPIfNonMatch"
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": {"udp": true, "auth": "noauth"},
-        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": {"allowTransparent": false},
-        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
-      }
+      {"tag": "socks", "port": 10808, "listen": "127.0.0.1", "protocol": "socks", "settings": {"udp": true, "auth": "noauth"}, "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http","tls","quic"]}},
+      {"tag": "http", "port": 10809, "listen": "127.0.0.1", "protocol": "http", "settings": {"allowTransparent": false}, "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http","tls","quic"]}}
     ],
     "outbounds": [
       {"tag": "proxy", "protocol": "vless", "settings": {"vnext": [{"address": "uk.pink-world.ru", "port": 443, "users": [{"id": "c5bbdac7-6ff5-4762-87bf-870f55a03581", "encryption": "none", "flow": "xtls-rprx-vision"}]}]}, "streamSettings": {"network": "tcp", "tcpSettings": {}, "security": "reality", "realitySettings": {"serverName": "uk.pink-world.ru", "publicKey": "_opuLIIMkMIsBduB1AkffQRpUQkiT36MFQhE9xyKzlg", "shortId": "dc02ce023d10ea04", "fingerprint": "chrome"}}},
       {"tag": "direct", "protocol": "freedom"},
       {"tag": "block", "protocol": "blackhole"}
-    ],
-    "remarks": "🇬🇧 Великобритания"
+    ]
   },
   {
     "dns": {"servers": ["1.1.1.1", "1.0.0.1"], "queryStrategy": "UseIP"},
+    "remarks": "📺 YouTube без рекламы",
     "routing": {
       "rules": [{"type": "field", "protocol": ["bittorrent"], "outboundTag": "direct"}],
       "domainMatcher": "hybrid",
       "domainStrategy": "IPIfNonMatch"
     },
     "inbounds": [
-      {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": {"udp": true, "auth": "noauth"},
-        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": {"allowTransparent": false},
-        "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"]}
-      }
+      {"tag": "socks", "port": 10808, "listen": "127.0.0.1", "protocol": "socks", "settings": {"udp": true, "auth": "noauth"}, "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http","tls","quic"]}},
+      {"tag": "http", "port": 10809, "listen": "127.0.0.1", "protocol": "http", "settings": {"allowTransparent": false}, "sniffing": {"enabled": true, "routeOnly": false, "destOverride": ["http","tls","quic"]}}
     ],
     "outbounds": [
       {"tag": "proxy", "protocol": "vless", "settings": {"vnext": [{"address": "89.124.98.217", "port": 443, "users": [{"id": "c5bbdac7-6ff5-4762-87bf-870f55a03581", "encryption": "none", "flow": "xtls-rprx-vision"}]}]}, "streamSettings": {"network": "tcp", "tcpSettings": {}, "security": "reality", "realitySettings": {"serverName": "nld.pink-world.ru", "publicKey": "tB6tQr-pmLTdMM8DVOb9KsS27lDkAjjelbdu_Gp1SR0", "shortId": "f27d8b541b5f48bf", "fingerprint": "chrome"}}},
       {"tag": "direct", "protocol": "freedom"},
       {"tag": "block", "protocol": "blackhole"}
-    ],
-    "remarks": "📺 YouTube без рекламы"
+    ]
   }
 ]
