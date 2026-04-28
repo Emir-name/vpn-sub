@@ -8,13 +8,13 @@ vless://a4c0fe0c-23ed-486a-8b4f-658504ca36e0@193.233.217.174:443?type=tcp&securi
 vless://ce1e547c-899a-48cb-89af-42100af68ee5@5.129.215.152:443?type=tcp&security=reality&pbk=gDaL_AWUClSUraz9fpTlDwKXCS-JydQJX2XQGpEjLHQ&fp=chrome&sni=yahoo.com&sid=59c6&spx=%2F#✈️ Антиглушилка
 
 vless://a5378ce2-2378-4200-860e-1f70443c3deb@194.33.34.167:443?type=tcp&security=reality&pbk=enBIOTqlP6CHTvic3CLgpUd_AcJAAbAQIa-oFIk4dVU&fp=chrome&sni=yahoo.com&sid=302e&spx=%2F#🇫🇷 Франция
-vless://8eb32a25-2a10-4147-a0e0-fecd2498ab84@45.12.133.207:443?type=tcp&security=reality&pbk=0T96I8dvAUF7BxhbwTp0PfFfy9AHFDsXXpwDnP0i224&fp=chrome&sni=yahoo.com&sid=4dd1&spx=%2F#🇫🇷 Франция
+
 
 vless://a6f9d171-dc73-4693-b53e-8d56faf40cb7@45.89.111.137:443?type=tcp&security=reality&pbk=-l3NHb7JeN_KAh6hCDoKoTPLZ9cqfUcszmfyNuGwWlM&fp=chrome&sni=yahoo.com&sid=c9cf&spx=%2F#🇬🇧 Великобритания
 
 vless://6d916d55-fead-4ff3-a3a9-83e175ea8ad7@cy227.mechvpn.online:443?security=tls&alpn=h3%2Ch2%2Chttp%2F1.1&encryption=none&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision#🇨🇾 Кипр (remiuc)
 vless://6d916d55-fead-4ff3-a3a9-83e175ea8ad7@ru113.mechvpn.online:443?security=tls&alpn=h3%2Ch2%2Chttp%2F1.1&encryption=none&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision#🇬🇧 Британия (remiuc)
-vless://6d916d55-fead-4ff3-a3a9-83e175ea8ad7@pl74.mechvpn.online:443?security=tls&alpn=h3%2Ch2%2Chttp%2F1.1&encryption=none&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision#🇵🇱 Польша (remiuc)
+
 
 vless://6d916d55-fead-4ff3-a3a9-83e175ea8ad7@ru43.mechvpn.online:443?security=tls&alpn=h3%2Ch2%2Chttp%2F1.1&encryption=none&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision#🇫🇮 Финляндия (remiuc)
 vless://6d916d55-fead-4ff3-a3a9-83e175ea8ad7@de139.mechvpn.online:443?security=tls&alpn=h3%2Ch2%2Chttp%2F1.1&encryption=none&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision#🇩🇪 Германия (remiuc)
@@ -27,22 +27,20 @@ vless://7eaacb96-c6f1-44b7-a3cd-d4d235573e15@65.109.211.186:8443?security=realit
 vless://7eaacb96-c6f1-44b7-a3cd-d4d235573e15@5.75.192.195:8443?security=reality&type=xhttp&headerType=&path=&host=&mode=auto&extra=%7B%22scMaxEachPostBytes%22%3A+1000000%2C+%22scMaxConcurrentPosts%22%3A+100%2C+%22scMinPostsIntervalMs%22%3A+30%2C+%22xPaddingBytes%22%3A+%22100-1000%22%2C+%22noGRPCHeader%22%3A+false%7D&sni=eh.vk.com&fp=chrome&pbk=_tBiRkButwPxxa2HHuNufy0Tyr_0SViQZReJT75JVTI&sid=d49d578f280fd83a#%F0%9F%87%A6%F0%9F%87%BF%20Azerbaijan
 vless://7eaacb96-c6f1-44b7-a3cd-d4d235573e15@138.124.125.62:8443?security=reality&type=xhttp&headerType=&path=&host=&mode=auto&extra=%7B%22scMaxEachPostBytes%22%3A+1000000%2C+%22scMaxConcurrentPosts%22%3A+100%2C+%22scMinPostsIntervalMs%22%3A+30%2C+%22xPaddingBytes%22%3A+%22100-1000%22%2C+%22noGRPCHeader%22%3A+false%7D&sni=eh.vk.com&fp=chrome&pbk=_tBiRkButwPxxa2HHuNufy0Tyr_0SViQZReJT75JVTI&sid=d49d578f280fd83a#%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom
 vless://7eaacb96-c6f1-44b7-a3cd-d4d235573e15@95.179.169.244:8443?security=reality&type=xhttp&headerType=&path=&host=&mode=auto&extra=%7B%22scMaxEachPostBytes%22%3A+1000000%2C+%22scMaxConcurrentPosts%22%3A+100%2C+%22scMinPostsIntervalMs%22%3A+30%2C+%22xPaddingBytes%22%3A+%22100-1000%22%2C+%22noGRPCHeader%22%3A+false%7D&sni=eh.vk.com&fp=chrome&pbk=_tBiRkButwPxxa2HHuNufy0Tyr_0SViQZReJT75JVTI&sid=d49d578f280fd83a#%F0%9F%87%A6%F0%9F%87%AA%20UAE
-vless://7eaacb96-c6f1-44b7-a3cd-d4d235573e15@64.176.66.28:8443?security=reality&type=xhttp&headerType=&path=&host=&mode=auto&extra=%7B%22scMaxEachPostBytes%22%3A+1000000%2C+%22scMaxConcurrentPosts%22%3A+100%2C+%22scMinPostsIntervalMs%22%3A+30%2C+%22xPaddingBytes%22%3A+%22100-1000%22%2C+%22noGRPCHeader%22%3A+false%7D&sni=eh.vk.com&fp=chrome&pbk=_tBiRkButwPxxa2HHuNufy0Tyr_0SViQZReJT75JVTI&sid=d49d578f280fd83a#%F0%9F%87%B5%F0%9F%87%B1%20Poland
+
 
 
 vless://09a429d9-6ffa-43f3-8b3a-c634dbdda94d@195.3.222.182:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=google.com&fp=firefox&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&sid=db04ce8bdb8900f1&type=tcp&headerType=none#🇦🇫 Афганистан
 vless://09a429d9-6ffa-43f3-8b3a-c634dbdda94d@195.3.221.228:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=google.com&fp=firefox&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&sid=db04ce8bdb8900f1&type=tcp&headerType=none#🇦🇪 ОАЭ | Дубай
 vless://09a429d9-6ffa-43f3-8b3a-c634dbdda94d@91.238.123.66:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=google.com&fp=firefox&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&sid=db04ce8bdb8900f1&type=tcp&headerType=none#🇨🇦 Канада
-vless://75807638-6f19-2710-ae08-38492ee85c88@5.188.159.69:52006/?flow=xtls-rprx-vision&type=tcp&headerType=none&security=tls&sni=cluster-de-2.firstvideocdn.ru&fp=chrome&allowInsecure=0#🇨🇾 Кипр
+
 
 vless://75807638-6f19-2710-ae08-38492ee85c88@178.72.181.132:52006/?flow=xtls-rprx-vision&type=tcp&headerType=none&security=tls&sni=cluster-de-1.firstvideocdn.ru&fp=chrome&allowInsecure=0#🇧🇪 Бельгия
 vless://ec2e642b-4f0e-4a59-90c4-6c5c640e07a8@185.91.53.55:8443/?type=grpc&mode=gun&serviceName=&security=reality&fp=chrome&sni=ads.x5.ru&pbk=dPXfrAC0Vcq2522VqYkyq-iALA91M13_YvPhm4G3S3E&sid=7ada97aa&spx=/#🇱🇻 Латвия
 
-vless://75807638-6f19-2710-ae08-38492ee85c88@5.188.159.69:52006/?flow=xtls-rprx-vision&type=tcp&headerType=none&security=tls&sni=cluster-de-2.firstvideocdn.ru&fp=chrome&allowInsecure=0#🇫🇮 Финляндия
 vless://36d85d65-1b57-4cba-a2a6-f61131b08593@srv2.towersflowerss.com:443?type=tcp&headerType=none&security=none#🇨🇳 Китай #1
 
 
-vless://f9d8aa07-589f-4da0-9cb0-fd8f2f0e4fa8@144.31.4.166:2053?type=grpc&serviceName=grpc&security=reality&fp=chrome&sni=www.deepl.com&pbk=ZHEMPjSWslk6_qD2JNQzd5enUPz8nY9mYRRuM6NkZmU&sid=0123456789abcdef#🇰🇵 Северная Корея #2
 vless://8227fd6f-9f1d-4488-b00a-200b823dfef0@bucket-ru-2.extravpn.io:443?type=grpc&serviceName=bucket-ru-2.extravpn.io&security=reality&fp=chrome&sni=bucket-ru-2.extravpn.io&pbk=Nwud-64DnPsNHvA-Bd_JoYxDS_e8_PotVayCM98ggXc&sid=#🇮🇷 Иран #1
 vless://91debc17-d16b-444f-b5a1-2d9303e2ea41@62.84.103.83:443?flow=xtls-rprx-vision&type=tcp&headerType=none&security=reality&fp=chrome&sni=rbc.ru&pbk=Cxvc5bVMKln6RxPs5MtviUZNDsmpfuYUK8UFBlcBaS0&sid=387d2fb5f83c0cde#🇮🇷 Иран #2
 vless://91debc17-d16b-444f-b5a1-2d9303e2ea41@185.245.106.251:443?flow=xtls-rprx-vision&type=tcp&headerType=none&security=reality&fp=chrome&sni=rbc.ru&pbk=Cxvc5bVMKln6RxPs5MtviUZNDsmpfuYUK8UFBlcBaS0&sid=387d2fb5f83c0cde#🇬🇧Остров Эпштейна #1
